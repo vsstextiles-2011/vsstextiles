@@ -156,6 +156,7 @@ export const colorHex = {
   'Light Mint Green':'#CEE3DE',  
   'dusty navy blue':'#465E82',
   'light gray': '#D3D9DC',
+  'Rust Orange' : '#D94820',
 }
 
 // Reliable placeholder used only if the local photo above fails to load —
@@ -1330,13 +1331,14 @@ const kidsBoysCatalog = [
     }
    },
   { name: 'Boys Round Neck T-Shirt – Royal', fabric: 'Cotton', label: 'Royal', menuParent: 'T-Shirt', price: 174, heading: 'Boys Outerwear', excludeVariants: ['Classic Fit', 'Relaxed Fit'], colors: ['Navy', 'Black', 'Grey', 'Blue', 'Red'], sizes: ['45', '50', '55', '60', '65', '70', '75', '80', '85'], sizePriceGroups: [['45', '50', '55'], ['60', '65', '70'], ['75'], ['80'], ['85']], sizePrices: [174, 174, 174, 186, 186, 186, 210, 234, 258], discount: 0, image: '/images/products/boys/tshirt/t-shirt-royal.jpg', imageSide: '/images/products/boys/printed-t-shirt-side.jpg', imageBack: '/images/products/boys/printed-t-shirt-back.jpg' },
-  { name: 'Boys Round Neck Full Hand T-Shirt – Vijay', fabric: 'Fancy', label: 'Vijay', menuParent: 'T-Shirt', price: 244, heading: 'Boys Outerwear', excludeVariants: ['Classic Fit', 'Relaxed Fit'], colors: ['Peach', 'Aqua Mint', 'Dark Green', 'Light Green', 'Grey'], sizes: ['45', '50', '55', '60', '65', '70', '75', '80', '85'], sizePriceGroups: [['45', '50', '55'], ['60', '65', '70'], ['75'], ['80'], ['85']], sizePrices: [244, 244, 244, 264, 264, 264, 284, 304, 324], discount: 0, image: '/images/products/boys/tshirt/colors/vijay/t-shirt-vijay-Peach.jpg', imageSide: '/images/products/boys/tshirt/colors/vijay/t-shirt-vijay-Peach-side.jpg', imageBack: '/images/products/boys/tshirt/colors/vijay/t-shirt-vijay-Peach-back.jpg' ,
+  { name: 'Boys Round Neck Full Hand T-Shirt – Vijay', fabric: 'Fancy', label: 'Vijay', menuParent: 'T-Shirt', price: 244, heading: 'Boys Outerwear', excludeVariants: ['Classic Fit', 'Relaxed Fit'], colors: ['Dark Pink', 'Peach', 'Aqua Mint', 'Dark Green', 'Grey', 'Rust Orange'], sizes: ['45', '50', '55', '60', '65', '70', '75', '80', '85'], sizePriceGroups: [['45', '50', '55'], ['60', '65', '70'], ['75'], ['80'], ['85']], sizePrices: [244, 244, 244, 264, 264, 264, 284, 304, 324], discount: 0, image: '/images/products/boys/tshirt/colors/vijay/t-shirt-vijay-Dark Pink.jpg', imageSide: '/images/products/boys/tshirt/colors/vijay/t-shirt-vijay-Dark Pink-side.jpg', imageBack: '/images/products/boys/tshirt/colors/vijay/t-shirt-vijay-Dark Pink-back.jpg' ,
     colorImages: {
       'Dark Green': { image: '/images/products/boys/tshirt/colors/vijay/t-shirt-vijay-Dark Green.jpg', imageSide: '/images/products/boys/tshirt/colors/vijay/t-shirt-vijay-Dark Green-side.jpg', imageBack: '/images/products/boys/tshirt/colors/vijay/t-shirt-vijay-Dark Green-back.jpg' },
-      'Light Green': { image: '/images/products/boys/tshirt/colors/vijay/t-shirt-vijay-Light Green.jpg', imageSide: '/images/products/boys/tshirt/colors/vijay/t-shirt-vijay-Light Green-side.jpg', imageBack: '/images/products/boys/tshirt/colors/vijay/t-shirt-vijay-Light Green-back.jpg' },
       Grey: { image: '/images/products/boys/tshirt/colors/vijay/t-shirt-vijay-Grey.jpg', imageSide: '/images/products/boys/tshirt/colors/vijay/t-shirt-vijay-Grey-side.jpg', imageBack: '/images/products/boys/tshirt/colors/vijay/t-shirt-vijay-Grey-back.jpg' },
       Peach: { image: '/images/products/boys/tshirt/colors/vijay/t-shirt-vijay-Peach.jpg', imageSide: '/images/products/boys/tshirt/colors/vijay/t-shirt-vijay-Peach-side.jpg', imageBack: '/images/products/boys/tshirt/colors/vijay/t-shirt-vijay-Peach-back.jpg' },
       'Aqua Mint': { image: '/images/products/boys/tshirt/colors/vijay/t-shirt-vijay-Aqua-Mint.jpg', imageSide: '/images/products/boys/tshirt/colors/vijay/t-shirt-vijay-Aqua-Mint-side.jpg', imageBack: '/images/products/boys/tshirt/colors/vijay/t-shirt-vijay-Aqua-Mint-back.jpg' },
+      'Dark Pink': { image: '/images/products/boys/tshirt/colors/vijay/t-shirt-vijay-Dark Pink.jpg', imageSide: '/images/products/boys/tshirt/colors/vijay/t-shirt-vijay-Dark Pink-side.jpg', imageBack: '/images/products/boys/tshirt/colors/vijay/t-shirt-vijay-Dark Pink-back.jpg' },
+      'Rust Orange': { image: '/images/products/boys/tshirt/colors/vijay/t-shirt-vijay-Rust Orange.jpg', imageSide: '/images/products/boys/tshirt/colors/vijay/t-shirt-vijay-Rust Orange-side.jpg', imageBack: '/images/products/boys/tshirt/colors/vijay/t-shirt-vijay-Rust Orange-back.jpg' },
     }
    },
   { name: 'Kids Five Sleeve T-Shirt – Jackson', fabric: 'Tencil', label: 'Jackson', menuParent: 'T-Shirt', price: 290, heading: 'Boys Outerwear', excludeVariants: ['Classic Fit', 'Relaxed Fit'], colors: ['PastelLavender', 'Black', 'DustyLavender', 'Navy', 'PowderBlue'], sizes: ['45', '50', '55', '60', '65', '70', '75', '80', '85'], sizePriceGroups: [['45', '50', '55'], ['60', '65', '70'], ['75'], ['80'], ['85']], sizePrices: [290, 290, 290, 320, 320, 320, 350, 380, 410], discount: 0, image: '/images/products/boys/tshirt/colors/jackson/t-shirt-jackson-PastelLavender.jpg', imageBack: '/images/products/boys/tshirt/colors/jackson/t-shirt-jackson-PastelLavender-back.jpg' ,
@@ -1475,7 +1477,7 @@ const kidsBoysCatalog = [
     },
    },
 
-  { name: 'Boys Summer Shorts – Jack', fabric: 'Cotton', label: 'Jack', menuParent: 'Shorts', price: 138, heading: 'Boys Outerwear', excludeVariants: ['Classic Fit', 'Relaxed Fit'], colors: ['Beige', 'Red', 'Black', 'Olive', 'Navy', 'Purple', 'CherryRed', 'EmeraldGreen', 'CoffeeBrown'], sizes: ['45', '50', '55', '60', '65', '70', '75', '80', '85'], sizePriceGroups: [['45', '50', '55'], ['60', '65', '70'], ['75'], ['80'], ['85']], sizePrices: [138, 138, 138, 150, 150, 150, 162, 178, 194], discount: 0,  image: '/images/products/boys/shorts/colors/Jack/Boys Summer Shorts-Jack-Beige.jpg', imageBack: '/images/products/boys/shorts/colors/Jack/Boys Summer Shorts-Jack-Beige-back.jpg' ,
+  { name: 'Boys Summer Shorts – Jack', fabric: 'Cotton', label: 'Jack', menuParent: 'Shorts', price: 138, heading: 'Boys Outerwear', excludeVariants: ['Classic Fit', 'Relaxed Fit'], colors: ['Purple', 'Beige', 'Black', 'Olive', 'Navy', 'PlumPurple',  'CherryRed', 'EmeraldGreen', 'Red', 'CoffeeBrown'], sizes: ['45', '50', '55', '60', '65', '70', '75', '80', '85'], sizePriceGroups: [['45', '50', '55'], ['60', '65', '70'], ['75'], ['80'], ['85']], sizePrices: [138, 138, 138, 150, 150, 150, 162, 178, 194], discount: 0,  image: '/images/products/boys/shorts/colors/Jack/Boys Summer Shorts-Jack-Purple.jpg', imageBack: '/images/products/boys/shorts/colors/Jack/Boys Summer Shorts-Jack-Purple-back.jpg' ,
     colorImages: {
       Red: { image: '/images/products/boys/shorts/colors/Jack/Boys Summer Shorts-Jack-red.jpg', imageBack: '/images/products/boys/shorts/colors/Jack/Boys Summer Shorts-Jack-red-back.jpg' },
       Black : { image: '/images/products/boys/shorts/colors/Jack/Boys Summer Shorts-Jack-black.jpg', imageBack: '/images/products/boys/shorts/colors/Jack/Boys Summer Shorts-Jack-black-back.jpg' },
@@ -1490,10 +1492,13 @@ const kidsBoysCatalog = [
     },
   },
   // "KIDS OUTER WEARS (NET RATE)" wholesale sheet — Mass and Don are Kids
-  // Shorts Set (5 Pcs) rows, so they land in Boys Outerwear alongside the
-  // other Shorts models. The sheet's size run starts at 40 (below the usual
-  // 45), so a leading '40' size is added ahead of the standard bands.
-  { name: 'Boys Shorts Set – Don', fabric: 'Cotton', label: 'Don', menuParent: 'Shorts', heading: 'Boys Outerwear', excludeVariants: ['Classic Fit', 'Relaxed Fit'], colors: ['Red', 'Navy', 'Grey', 'Beige', 'Cornflower Blue', 'Black'], sizes: ['40', '45', '50', '55', '60', '65', '70', '75'], sizePriceGroups: [['40'], ['45', '50', '55'], ['60', '65', '70'], ['75']], sizePrices: [134, 149, 149, 149, 164, 164, 164, 179], price: 134, discount: 0, image: '/images/products/boys/shorts/colors/Don/Boys Shorts Set-Don-red.jpg', imageBack: '/images/products/boys/shorts/colors/Don/Boys Shorts Set-Don-red-back.jpg' ,
+  // Shorts Set (5 Pcs) rows, so they land in Boys Outerwear. Both are
+  // grouped under the existing "Co-Ords & Shorts Set" flyout (same one
+  // used by the Leo Lilly sets below) rather than the plain "Shorts" row,
+  // since these are two-piece sets, not standalone shorts. The sheet's
+  // size run starts at 40 (below the usual 45), so a leading '40' size is
+  // added ahead of the standard bands.
+  { name: 'Boys Shorts Set – Don', fabric: 'Cotton', label: 'Don', menuParent: 'Co-Ords & Shorts Set', heading: 'Boys Outerwear', excludeVariants: ['Classic Fit', 'Relaxed Fit'], colors: ['Red', 'Navy', 'Grey', 'Beige', 'Cornflower Blue', 'Black'], sizes: ['40', '45', '50', '55', '60', '65', '70', '75'], sizePriceGroups: [['40'], ['45', '50', '55'], ['60', '65', '70'], ['75']], sizePrices: [134, 149, 149, 149, 164, 164, 164, 179], price: 134, discount: 0, image: '/images/products/boys/shorts/colors/Don/Boys Shorts Set-Don-red.jpg', imageBack: '/images/products/boys/shorts/colors/Don/Boys Shorts Set-Don-red-back.jpg' ,
     colorImages: {
       Red: { image: '/images/products/boys/shorts/colors/Don/Boys Shorts Set-Don-red.jpg', imageBack: '/images/products/boys/shorts/colors/Don/Boys Shorts Set-Don-red-back.jpg' },
       Navy : { image: '/images/products/boys/shorts/colors/Don/Boys Shorts Set-Don-Navy.jpg', imageBack: '/images/products/boys/shorts/colors/Don/Boys Shorts Set-Don-Navy-back.jpg' },
@@ -1503,7 +1508,15 @@ const kidsBoysCatalog = [
       'Cornflower Blue' : { image: '/images/products/boys/shorts/colors/Don/Boys Shorts Set-Don-Cornflower Blue.jpg', imageBack: '/images/products/boys/shorts/colors/Don/Boys Shorts Set-Don-Cornflower Blue-back.jpg' },
     },  
    },
-  // { name: 'Boys Shorts Set – Mass', fabric: 'Cotton', label: 'Mass', menuParent: 'Shorts', heading: 'Boys Outerwear', excludeVariants: ['Classic Fit', 'Relaxed Fit'], colors: ['Navy', 'Grey', 'Black', 'Olive', 'Brown'], sizes: ['40', '45', '50', '55', '60', '65', '70', '75', '80', '85'], sizePriceGroups: [['40'], ['45', '50', '55'], ['60', '65', '70'], ['75'], ['80'], ['85']], sizePrices: [130, 145, 145, 145, 160, 160, 160, 175, 190, 205], price: 130, discount: 0, image: '/images/products/boys/Boys Shorts Set – Mass.jpg', imageSide: '/images/products/boys/Boys Shorts Set – Mass-side.jpg', imageBack: '/images/products/boys/Boys Shorts Set – Mass-back.jpg' },
+ { name: 'Boys Shorts Set – Mass', fabric: 'Cotton', label: 'Mass', menuParent: 'Co-Ords & Shorts Set', heading: 'Boys Outerwear', excludeVariants: ['Classic Fit', 'Relaxed Fit'], colors: ['Wine', 'Dark Green', 'Grey', 'Orange', 'Black'], sizes: ['40', '45', '50', '55', '60', '65', '70', '75', '80', '85'], sizePriceGroups: [['40'], ['45', '50', '55'], ['60', '65', '70'], ['75'], ['80'], ['85']], sizePrices: [130, 145, 145, 145, 160, 160, 160, 175, 190, 205], price: 130, discount: 0, image: '/images/products/boys/shorts/colors/Mass/Boys Shorts Set - Mass-Orange.jpg', imageBack: '/images/products/boys/shorts/colors/Mass/Boys Shorts Set - Mass-Orange-back.jpg' ,
+  colorImages: {
+      Wine: { image: '/images/products/boys/shorts/colors/Mass/Boys Shorts Set - Mass-Wine.jpg', imageBack: '/images/products/boys/shorts/colors/Mass/Boys Shorts Set - Mass-Wine-back.jpg' },
+      'Dark Green' : { image: '/images/products/boys/shorts/colors/Mass/Boys Shorts Set - Mass-Dark Green.jpg', imageBack: '/images/products/boys/shorts/colors/Mass/Boys Shorts Set - Mass-Dark Green-back.jpg' },
+      Grey : { image: '/images/products/boys/shorts/colors/Mass/Boys Shorts Set - Mass-Grey.jpg', imageBack: '/images/products/boys/shorts/colors/Mass/Boys Shorts Set - Mass-Grey-back.jpg' },
+      Black : { image: '/images/products/boys/shorts/colors/Mass/Boys Shorts Set - Mass-Black.jpg', imageBack: '/images/products/boys/shorts/colors/Mass/Boys Shorts Set - Mass-Black-back.jpg' },
+      'Orange' : { image: '/images/products/boys/shorts/colors/Mass/Boys Shorts Set - Mass-Orange.jpg', imageBack: '/images/products/boys/shorts/colors/Mass/Boys Shorts Set - Mass-Orange-back.jpg' },
+    },
+  },
   // Additional models added from the V.S.S Textiles wholesale price list
   // (Outer Wear sheets 2 & 3). Same pattern as the Outerwear items above —
   // sizePrices carry the MRP rate for each size band, no discount applied.
@@ -1549,7 +1562,15 @@ const kidsBoysCatalog = [
   //{ name: 'Boys Print Full Pant – Remo', fabric: 'Cotton', label: 'Remo', menuParent: 'Full Pant', price: 278, heading: 'Boys Outerwear', excludeVariants: ['Classic Fit', 'Relaxed Fit'], colors: ['Navy', 'Black', 'Grey', 'Khaki', 'Blue'], sizes: ['45', '50', '55', '60', '65', '70', '75', '80', '85'], sizePriceGroups: [['45', '50', '55'], ['60', '65', '70'], ['75'], ['80'], ['85']], sizePrices: [278, 278, 278, 298, 298, 298, 318, 338, 358], discount: 0, image: '/images/products/boys/jeans.jpg', imageSide: '/images/products/boys/jeans-side.jpg', imageBack: '/images/products/boys/jeans-back.jpg' },
   //{ name: 'Boys Plain Full Pant – Sanjay', fabric: 'Cotton', label: 'Sanjay', menuParent: 'Full Pant', price: 222, heading: 'Boys Outerwear', excludeVariants: ['Classic Fit', 'Relaxed Fit'], colors: ['Black', 'Navy', 'Grey', 'Khaki', 'Blue'], sizes: ['45', '50', '55', '60', '65', '70', '75', '80', '85'], sizePriceGroups: [['45', '50', '55'], ['60', '65', '70'], ['75'], ['80'], ['85']], sizePrices: [222, 222, 222, 242, 242, 242, 262, 282, 302], discount: 0, image: '/images/products/boys/jeans.jpg', imageSide: '/images/products/boys/jeans-side.jpg', imageBack: '/images/products/boys/jeans-back.jpg' },
   //{ name: 'Boys Full Pant – Roshan', fabric: 'Cotton', label: 'Roshan', menuParent: 'Full Pant', price: 242, heading: 'Boys Outerwear', excludeVariants: ['Classic Fit', 'Relaxed Fit'], colors: ['Black', 'Navy', 'Grey', 'Blue', 'Green'], sizes: ['45-55', '60-70', '75', '80'], sizePriceGroups: [['45-55'], ['60-70'], ['75'], ['80']], sizePrices: [242, 262, 282, 302], discount: 0, image: '/images/products/boys/jeans.jpg', imageSide: '/images/products/boys/jeans-side.jpg', imageBack: '/images/products/boys/jeans-back.jpg' },
-  //{ name: 'Boys Pant – Campus', fabric: 'Cotton', label: 'Campus', menuParent: 'Full Pant', price: 212, heading: 'Boys Outerwear', excludeVariants: ['Classic Fit', 'Relaxed Fit'], colors: ['Black', 'Navy', 'Grey', 'Khaki', 'Blue'], sizes: ['45', '50', '55', '60', '65', '70', '75', '80', '85'], sizePriceGroups: [['45', '50', '55'], ['60', '65', '70'], ['75'], ['80'], ['85']], sizePrices: [212, 212, 212, 232, 232, 232, 252, 272, 292], discount: 0, image: '/images/products/boys/jeans.jpg', imageSide: '/images/products/boys/jeans-side.jpg', imageBack: '/images/products/boys/jeans-back.jpg' },
+  { name: 'Boys Pant – Campus', fabric: 'Cotton', label: 'Campus', menuParent: 'Full Pant', price: 212, heading: 'Boys Outerwear', excludeVariants: ['Classic Fit', 'Relaxed Fit'], colors: ['Brown', 'Wine', 'Dark Green', 'Grey', 'Navy Blue'], sizes: ['45', '50', '55', '60', '65', '70', '75', '80', '85'], sizePriceGroups: [['45', '50', '55'], ['60', '65', '70'], ['75'], ['80'], ['85']], sizePrices: [212, 212, 212, 232, 232, 232, 252, 272, 292], discount: 0, image: '/images/products/boys/fullpant/Campus/Track-Pant-Campus-Brown.jpg', imageBack: '/images/products/boys/fullpant/Campus/Track-Pant-Campus-Brown-back.jpg' ,
+    colorImages: {
+      Wine: { image: '/images/products/boys/fullpant/Campus/Track-Pant-Campus-Wine.jpg', imageBack: '/images/products/boys/fullpant/Campus/Track-Pant-Campus-Wine-back.jpg' },
+      'Dark Green' : { image: '/images/products/boys/fullpant/Campus/Track-Pant-Campus-Dark Green.jpg', imageBack: '/images/products/boys/fullpant/Campus/Track-Pant-Campus-Dark Green-back.jpg' },
+      Grey : { image: '/images/products/boys/fullpant/Campus/Track-Pant-Campus-Grey.jpg', imageBack: '/images/products/boys/fullpant/Campus/Track-Pant-Campus-Grey-back.jpg' },
+      'Navy Blue' : { image: '/images/products/boys/fullpant/Campus/Track-Pant-Campus-Navy Blue.jpg', imageBack: '/images/products/boys/fullpant/Campus/Track-Pant-Campus-Navy Blue-back.jpg' },
+      Brown : { image: '/images/products/boys/fullpant/Campus/Track-Pant-Campus-Brown.jpg', imageBack: '/images/products/boys/fullpant/Campus/Track-Pant-Campus-Brown-back.jpg' },
+    },
+   },
 
   // Co-Ords & Shorts Set — from the "KIDS WEAR SET RNS" wholesale price
   // list. Sized as S-M-L / XL-XXL bands (site price is the sheet's MRP

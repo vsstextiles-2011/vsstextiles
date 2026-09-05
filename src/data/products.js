@@ -1278,12 +1278,12 @@ const kidsBoysCatalog = [
   },
   { name: 'Boys T-Shirt – Rado', fabric: 'Fancy', label: 'Rado', menuParent: 'T-Shirt', price: 198, heading: 'Boys Outerwear', excludeVariants: ['Classic Fit', 'Relaxed Fit'], colors: ['Aqua Mint', 'Coral Pink', 'Green', 'Wine', 'Navy', 'Grey'], sizes: ['45', '50', '55', '60', '65', '70', '75', '80', '85'], sizePriceGroups: [['45', '50', '55'], ['60', '65', '70'], ['75'], ['80'], ['85']], sizePrices: [198, 198, 198, 218, 218, 218, 238, 258, 278], discount: 0, image: '/images/products/boys/tshirt/colors/rado/t-shirt-rado-Aqua-Mint.jpg', imageSide: '/images/products/boys/tshirt/colors/rado/t-shirt-rado-Aqua-Mint-side.jpg', imageBack: '/images/products/boys/tshirt/colors/rado/t-shirt-rado-Aqua-Mint-back.jpg' ,
     colorImages: {
-      Green: { image: '/images/products/boys/tshirt/colors/rado/t-shirt-rado-green.jpg', imageSide: '/images/products/boys/tshirt/colors/rado/t-shirt-rado-green-side.jpg', imageBack: '/images/products/boys/tshirt/colors/rado/t-shirt-rado-green-back.jpg' },
-      Wine: { image: '/images/products/boys/tshirt/colors/rado/t-shirt-rado-Wine.jpg', imageSide: '/images/products/boys/tshirt/colors/rado/t-shirt-rado-Wine-side.jpg', imageBack: '/images/products/boys/tshirt/colors/rado/t-shirt-rado-Wine-back.jpg' },
-      Navy: { image: '/images/products/boys/tshirt/colors/rado/t-shirt-rado-Navy.jpg', imageSide: '/images/products/boys/tshirt/colors/rado/t-shirt-rado-Navy-side.jpg', imageBack: '/images/products/boys/tshirt/colors/rado/t-shirt-rado-Navy-back.jpg' },
-      Grey: { image: '/images/products/boys/tshirt/colors/rado/t-shirt-rado-Grey.jpg', imageSide: '/images/products/boys/tshirt/colors/rado/t-shirt-rado-Grey-side.jpg', imageBack: '/images/products/boys/tshirt/colors/rado/t-shirt-rado-Grey-back.jpg' },
-      'Coral Pink': { image: '/images/products/boys/tshirt/colors/rado/t-shirt-rado-Coral Pink.jpg', imageSide: '/images/products/boys/tshirt/colors/rado/t-shirt-rado-Coral Pink-side.jpg', imageBack: '/images/products/boys/tshirt/colors/rado/t-shirt-rado-Coral Pink-back.jpg' },
-      'Aqua Mint': { image: '/images/products/boys/tshirt/colors/rado/t-shirt-rado-Aqua-Mint.jpg', imageSide: '/images/products/boys/tshirt/colors/rado/t-shirt-rado-Aqua-Mint-side.jpg', imageBack: '/images/products/boys/tshirt/colors/rado/t-shirt-rado-Aqua-Mint-back.jpg' },
+      Green: { image: '/images/products/boys/tshirt/colors/rado/t-shirt-rado-green.jpg',/*  imageSide: '/images/products/boys/tshirt/colors/rado/t-shirt-rado-green-side.jpg',  */imageBack: '/images/products/boys/tshirt/colors/rado/t-shirt-rado-green-back.jpg' },
+      Wine: { image: '/images/products/boys/tshirt/colors/rado/t-shirt-rado-Wine.jpg',/*  imageSide: '/images/products/boys/tshirt/colors/rado/t-shirt-rado-Wine-side.jpg',  */imageBack: '/images/products/boys/tshirt/colors/rado/t-shirt-rado-Wine-back.jpg' },
+      Navy: { image: '/images/products/boys/tshirt/colors/rado/t-shirt-rado-Navy.jpg',/*  imageSide: '/images/products/boys/tshirt/colors/rado/t-shirt-rado-Navy-side.jpg',  */imageBack: '/images/products/boys/tshirt/colors/rado/t-shirt-rado-Navy-back.jpg' },
+      Grey: { image: '/images/products/boys/tshirt/colors/rado/t-shirt-rado-Grey.jpg', /* imageSide: '/images/products/boys/tshirt/colors/rado/t-shirt-rado-Grey-side.jpg',  */imageBack: '/images/products/boys/tshirt/colors/rado/t-shirt-rado-Grey-back.jpg' },
+      'Coral Pink': { image: '/images/products/boys/tshirt/colors/rado/t-shirt-rado-Coral Pink.jpg',/*  imageSide: '/images/products/boys/tshirt/colors/rado/t-shirt-rado-Coral Pink-side.jpg', */ imageBack: '/images/products/boys/tshirt/colors/rado/t-shirt-rado-Coral Pink-back.jpg' },
+      'Aqua Mint': { image: '/images/products/boys/tshirt/colors/rado/t-shirt-rado-Aqua-Mint.jpg',/*  imageSide: '/images/products/boys/tshirt/colors/rado/t-shirt-rado-Aqua-Mint-side.jpg', */ imageBack: '/images/products/boys/tshirt/colors/rado/t-shirt-rado-Aqua-Mint-back.jpg' },
     },
    },
   // New product — no dedicated photo yet, so it falls back to a
@@ -1291,16 +1291,6 @@ const kidsBoysCatalog = [
   // real photos in public/images/products/boys/tshirt/ (e.g.
   // t-shirt-hero.jpg / -side.jpg / -back.jpg) and update the three image
   // paths below to match.
-  { name: 'Boys T-Shirt – Hero', fabric: 'Cotton', label: 'Hero', menuParent: 'T-Shirt', price: 220, heading: 'Boys Outerwear', excludeVariants: ['Classic Fit', 'Relaxed Fit'], colors: ['Wine', 'Black', 'Brown', 'BlushPink', 'Grey', 'PeacockBlue'], sizes: ['45', '50', '55', '60', '65', '70', '75', '80', '85'], sizePriceGroups: [['45', '50', '55'], ['60', '65', '70'], ['75'], ['80'], ['85']], sizePrices: [220, 220, 220, 240, 240, 240, 260, 280, 300], discount: 0, image: '/images/products/boys/tshirt/colors/hero/t-shirt-bt-hero-wine.jpg', imageSide: '/images/products/boys/printed-t-shirt-side.jpg', imageBack: '/images/products/boys/printed-t-shirt-back.jpg',
-    colorImages: {
-      Brown: { image: '/images/products/boys/tshirt/colors/hero/t-shirt-bt-hero-Brown.jpg', imageBack: '/images/products/boys/tshirt/colors/hero/t-shirt-bt-hero-Brown-back.jpg' },
-      Black: { image: '/images/products/boys/tshirt/colors/hero/t-shirt-bt-hero-Black.jpg', imageBack: '/images/products/boys/tshirt/colors/hero/t-shirt-bt-hero-Black-back.jpg' },
-      BlushPink: { image: '/images/products/boys/tshirt/colors/hero/t-shirt-bt-hero-BlushPink.jpg', imageBack: '/images/products/boys/tshirt/colors/hero/t-shirt-bt-hero-BlushPink-back.jpg' },
-      Grey: { image: '/images/products/boys/tshirt/colors/hero/t-shirt-bt-hero-grey.jpg', imageBack: '/images/products/boys/tshirt/colors/hero/t-shirt-bt-hero-grey-back.jpg' },
-      PeacockBlue: { image: '/images/products/boys/tshirt/colors/hero/t-shirt-bt-hero-PeacockBlue.jpg', imageBack: '/images/products/boys/tshirt/colors/hero/t-shirt-bt-hero-PeacockBlue-back.jpg' },
-      Wine: { image: '/images/products/boys/tshirt/colors/hero/t-shirt-bt-hero-wine.jpg', imageBack: '/images/products/boys/tshirt/colors/hero/t-shirt-bt-hero-wine-back.jpg' },
-      },
-   },
   { name: 'Boys T-Shirt – Leo', fabric: 'Tencil', label: 'Leo', menuParent: 'T-Shirt', price: 250, heading: 'Boys Outerwear', excludeVariants: ['Classic Fit', 'Relaxed Fit'], colors: ['Red', 'Blue', 'Black', 'White', 'Green'], sizes: ['45', '50', '55', '60', '65', '70', '75', '80', '85'], sizePriceGroups: [['45', '50', '55'], ['60', '65', '70'], ['75'], ['80'], ['85']], sizePrices: [250, 250, 250, 270, 270, 270, 290, 310, 330], discount: 0, image: '/images/products/boys/tshirt/t-shirt-leo.jpg', imageSide: '/images/products/boys/printed-t-shirt-side.jpg', imageBack: '/images/products/boys/printed-t-shirt-back.jpg' },
   { name: 'Boys Print T-Shirt – Surya', fabric: 'Fancy', label: 'Surya', menuParent: 'T-Shirt', price: 158, heading: 'Boys Outerwear', excludeVariants: ['Classic Fit', 'Relaxed Fit'], colors: ['Navy Blue', 'Taupe Grey', 'Wine', 'Black', 'Royal Blue'], sizes: ['45', '50', '55', '60', '65', '70', '75', '80', '85'], sizePriceGroups: [['45', '50', '55'], ['60', '65', '70'], ['75'], ['80'], ['85']], sizePrices: [158, 158, 158, 170, 170, 170, 194, 218, 242], discount: 0, image: '/images/products/boys/tshirt/colors/surya/t-shirt-bt-surya-Navy Blue.jpg', imageBack: '/images/products/boys/tshirt/colors/surya/t-shirt-bt-surya-Navy Blue-back.jpg' ,
     colorImages: {
@@ -1323,32 +1313,36 @@ const kidsBoysCatalog = [
    },
   { name: 'Boys Round Neck T-Shirt – Jawan', fabric: 'Cotton', label: 'Jawan', menuParent: 'T-Shirt', price: 220, heading: 'Boys Outerwear', excludeVariants: ['Classic Fit', 'Relaxed Fit'], colors: ['Wine', 'Navy Blue', 'Jomatto', 'EmeraldGreen', 'Yellow', 'Black'], sizes: ['45', '50', '55', '60', '65', '70', '75', '80', '85'], sizePriceGroups: [['45', '50', '55'], ['60', '65', '70'], ['75'], ['80'], ['85']], sizePrices: [220, 220, 220, 244, 244, 244, 268, 292, 316], discount: 0, image: '/images/products/boys/tshirt/colors/jawan/t-shirt-jawan-Wine.jpg', imageSide: '/images/products/boys/tshirt/colors/jawan/t-shirt-jawan-Wine-side.jpg', imageBack: '/images/products/boys/tshirt/colors/jawan/t-shirt-jawan-Wine-back.jpg' ,
     colorImages: {
-      'Navy Blue': { image: '/images/products/boys/tshirt/colors/jawan/t-shirt-jawan-Navy Blue.jpg', imageSide: '/images/products/boys/tshirt/colors/jawan/t-shirt-jawan-Navy Blue-side.jpg', imageBack: '/images/products/boys/tshirt/colors/jawan/t-shirt-jawan-Navy Blue-back.jpg' },
-      Jomatto: { image: '/images/products/boys/tshirt/colors/jawan/t-shirt-jawan-Jomatto.jpg', imageSide: '/images/products/boys/tshirt/colors/jawan/t-shirt-jawan-Jomatto-side.jpg', imageBack: '/images/products/boys/tshirt/colors/jawan/t-shirt-jawan-Jomatto-back.jpg' },
-      EmeraldGreen: { image: '/images/products/boys/tshirt/colors/jawan/t-shirt-jawan-EmeraldGreen.jpg', imageSide: '/images/products/boys/tshirt/colors/jawan/t-shirt-jawan-EmeraldGreen-side.jpg', imageBack: '/images/products/boys/tshirt/colors/jawan/t-shirt-jawan-EmeraldGreen-back.jpg' },
-      Wine : { image: '/images/products/boys/tshirt/colors/jawan/t-shirt-jawan-Wine.jpg', imageSide: '/images/products/boys/tshirt/colors/jawan/t-shirt-jawan-Wine-side.jpg', imageBack: '/images/products/boys/tshirt/colors/jawan/t-shirt-jawan-Wine-back.jpg' },
-      Yellow: { image: '/images/products/boys/tshirt/colors/jawan/t-shirt-jawan-Yellow.jpg', imageSide: '/images/products/boys/tshirt/colors/jawan/t-shirt-jawan-Yellow-side.jpg', imageBack: '/images/products/boys/tshirt/colors/jawan/t-shirt-jawan-Yellow-back.jpg' },
-      Black: { image: '/images/products/boys/tshirt/colors/jawan/t-shirt-jawan-Black.jpg', imageSide: '/images/products/boys/tshirt/colors/jawan/t-shirt-jawan-Black-side.jpg', imageBack: '/images/products/boys/tshirt/colors/jawan/t-shirt-jawan-Black-back.jpg' },
+      'Navy Blue': { image: '/images/products/boys/tshirt/colors/jawan/t-shirt-jawan-Navy Blue.jpg',/*  imageSide: '/images/products/boys/tshirt/colors/jawan/t-shirt-jawan-Navy Blue-side.jpg', */ imageBack: '/images/products/boys/tshirt/colors/jawan/t-shirt-jawan-Navy Blue-back.jpg' },
+      Jomatto: { image: '/images/products/boys/tshirt/colors/jawan/t-shirt-jawan-Jomatto.jpg', /* imageSide: '/images/products/boys/tshirt/colors/jawan/t-shirt-jawan-Jomatto-side.jpg',  */imageBack: '/images/products/boys/tshirt/colors/jawan/t-shirt-jawan-Jomatto-back.jpg' },
+      EmeraldGreen: { image: '/images/products/boys/tshirt/colors/jawan/t-shirt-jawan-EmeraldGreen.jpg',/*  imageSide: '/images/products/boys/tshirt/colors/jawan/t-shirt-jawan-EmeraldGreen-side.jpg', */ imageBack: '/images/products/boys/tshirt/colors/jawan/t-shirt-jawan-EmeraldGreen-back.jpg' },
+      Wine : { image: '/images/products/boys/tshirt/colors/jawan/t-shirt-jawan-Wine.jpg',/*  imageSide: '/images/products/boys/tshirt/colors/jawan/t-shirt-jawan-Wine-side.jpg', */ imageBack: '/images/products/boys/tshirt/colors/jawan/t-shirt-jawan-Wine-back.jpg' },
+      Yellow: { image: '/images/products/boys/tshirt/colors/jawan/t-shirt-jawan-Yellow.jpg',/*  imageSide: '/images/products/boys/tshirt/colors/jawan/t-shirt-jawan-Yellow-side.jpg',  */imageBack: '/images/products/boys/tshirt/colors/jawan/t-shirt-jawan-Yellow-back.jpg' },
+      Black: { image: '/images/products/boys/tshirt/colors/jawan/t-shirt-jawan-Black.jpg',/*  imageSide: '/images/products/boys/tshirt/colors/jawan/t-shirt-jawan-Black-side.jpg',  */imageBack: '/images/products/boys/tshirt/colors/jawan/t-shirt-jawan-Black-back.jpg' },
     }
    },
-  { name: 'Boys Round Neck T-Shirt – Royal', fabric: 'Cotton', label: 'Royal', menuParent: 'T-Shirt', price: 174, heading: 'Boys Outerwear', excludeVariants: ['Classic Fit', 'Relaxed Fit'], colors: ['Wine', 'charcoal gray', 'CherryRed', 'EmeraldGreen', 'Yellow', 'Black'], sizes: ['45', '50', '55', '60', '65', '70', '75', '80', '85'], sizePriceGroups: [['45', '50', '55'], ['60', '65', '70'], ['75'], ['80'], ['85']], sizePrices: [174, 174, 174, 186, 186, 186, 210, 234, 258], discount: 0, image: '/images/products/boys/tshirt/t-shirt-royal.jpg', imageSide: '/images/products/boys/printed-t-shirt-side.jpg', imageBack: '/images/products/boys/printed-t-shirt-back.jpg',
+  { name: 'Boys Round Neck T-Shirt – Royal', fabric: 'Cotton', label: 'Royal', menuParent: 'T-Shirt', price: 174, heading: 'Boys Outerwear', excludeVariants: ['Classic Fit', 'Relaxed Fit'], colors: ['charcoal gray', 'CherryRed', 'Checked', 'Black', 'Wine', 'DustyLavender', 'Navy', 'Grey', 'Dusty Sage Green', 'CoffeeBrown'], sizes: ['45', '50', '55', '60', '65', '70', '75', '80', '85'], sizePriceGroups: [['45', '50', '55'], ['60', '65', '70'], ['75'], ['80'], ['85']], sizePrices: [174, 174, 174, 186, 186, 186, 210, 234, 258], discount: 0, image: '/images/products/boys/tshirt/colors/Royal/t-shirt-Royal-charcoal gray.jpg', imageSide: '/images/products/boys/tshirt/colors/Royal/t-shirt-Royal-charcoal gray-side.jpg', imageBack: '/images/products/boys/tshirt/colors/Royal/t-shirt-Royal-charcoal gray-back.jpg' ,
      colorImages: {
-      'charcoal gray': { image: '/images/products/boys/tshirt/colors/Royal/t-shirt-Royal-charcoal gray.jpg', imageSide: '/images/products/boys/tshirt/colors/Royal/t-shirt-Royal-charcoal gray-side.jpg', imageBack: '/images/products/boys/tshirt/colors/Royal/t-shirt-Royal-charcoal gray-back.jpg' },
-      CherryRed: { image: '/images/products/boys/tshirt/colors/Royal/t-shirt-Royal-CherryRed.jpg', imageSide: '/images/products/boys/tshirt/colors/Royal/t-shirt-Royal-CherryRed-side.jpg', imageBack: '/images/products/boys/tshirt/colors/Royal/t-shirt-Royal-CherryRed-back.jpg' },
-      EmeraldGreen: { image: '/images/products/boys/tshirt/colors/Royal/t-shirt-Royal-EmeraldGreen.jpg', imageSide: '/images/products/boys/tshirt/colors/Royal/t-shirt-Royal-EmeraldGreen-side.jpg', imageBack: '/images/products/boys/tshirt/colors/Royal/t-shirt-Royal-EmeraldGreen-back.jpg' },
-      Wine : { image: '/images/products/boys/tshirt/colors/Royal/t-shirt-Royal-Wine.jpg', imageSide: '/images/products/boys/tshirt/colors/Royal/t-shirt-Royal-Wine-side.jpg', imageBack: '/images/products/boys/tshirt/colors/Royal/t-shirt-Royal-Wine-back.jpg' },
-      Yellow: { image: '/images/products/boys/tshirt/colors/Royal/t-shirt-Royal-Yellow.jpg', imageSide: '/images/products/boys/tshirt/colors/Royal/t-shirt-Royal-Yellow-side.jpg', imageBack: '/images/products/boys/tshirt/colors/Royal/t-shirt-Royal-Yellow-back.jpg' },
-      Black: { image: '/images/products/boys/tshirt/colors/Royal/t-shirt-Royal-Black.jpg', imageSide: '/images/products/boys/tshirt/colors/Royal/t-shirt-Royal-Black-side.jpg', imageBack: '/images/products/boys/tshirt/colors/Royal/t-shirt-Royal-Black-back.jpg' },
+      'charcoal gray': { image: '/images/products/boys/tshirt/colors/Royal/t-shirt-Royal-charcoal gray.jpg',/*  imageSide: '/images/products/boys/tshirt/colors/Royal/t-shirt-Royal-charcoal gray-side.jpg',  */imageBack: '/images/products/boys/tshirt/colors/Royal/t-shirt-Royal-charcoal gray-back.jpg' },
+      CherryRed: { image: '/images/products/boys/tshirt/colors/Royal/t-shirt-Royal-CherryRed.jpg',/*  imageSide: '/images/products/boys/tshirt/colors/Royal/t-shirt-Royal-CherryRed-side.jpg',  */imageBack: '/images/products/boys/tshirt/colors/Royal/t-shirt-Royal-CherryRed-back.jpg' },
+      Checked: { image: '/images/products/boys/tshirt/colors/Royal/t-shirt-Royal-Checked.jpg',/*  imageSide: '/images/products/boys/tshirt/colors/Royal/t-shirt-Royal-Checked-side.jpg', */ imageBack: '/images/products/boys/tshirt/colors/Royal/t-shirt-Royal-Checked-back.jpg' },
+      Black: { image: '/images/products/boys/tshirt/colors/Royal/t-shirt-Royal-Black.jpg',/*  imageSide: '/images/products/boys/tshirt/colors/Royal/t-shirt-Royal-Black-side.jpg',  */imageBack: '/images/products/boys/tshirt/colors/Royal/t-shirt-Royal-Black-back.jpg' },
+      Wine : { image: '/images/products/boys/tshirt/colors/Royal/t-shirt-Royal-Wine.jpg',/*  imageSide: '/images/products/boys/tshirt/colors/Royal/t-shirt-Royal-Wine-side.jpg',  */imageBack: '/images/products/boys/tshirt/colors/Royal/t-shirt-Royal-Wine-back.jpg' },
+      DustyLavender: { image: '/images/products/boys/tshirt/colors/Royal/t-shirt-Royal-DustyLavender.jpg',/*  imageSide: '/images/products/boys/tshirt/colors/Royal/t-shirt-Royal-DustyLavender-side.jpg',  */imageBack: '/images/products/boys/tshirt/colors/Royal/t-shirt-Royal-DustyLavender-back.jpg' },
+      Navy: { image: '/images/products/boys/tshirt/colors/Royal/t-shirt-Royal-Navy.jpg',/*  imageSide: '/images/products/boys/tshirt/colors/Royal/t-shirt-Royal-Navy-side.jpg', */ imageBack: '/images/products/boys/tshirt/colors/Royal/t-shirt-Royal-Navy-back.jpg' },
+      Grey: { image: '/images/products/boys/tshirt/colors/Royal/t-shirt-Royal-Grey.jpg',/*  imageSide: '/images/products/boys/tshirt/colors/Royal/t-shirt-Royal-Grey-side.jpg',  */imageBack: '/images/products/boys/tshirt/colors/Royal/t-shirt-Royal-Grey-back.jpg' },
+      'Dusty Sage Green': { image: '/images/products/boys/tshirt/colors/Royal/t-shirt-Royal-Dusty Sage Green.jpg',/*  imageSide: '/images/products/boys/tshirt/colors/Royal/t-shirt-Royal-Dusty Sage Green-side.jpg', */ imageBack: '/images/products/boys/tshirt/colors/Royal/t-shirt-Royal-Dusty Sage Green-back.jpg' },
+      CoffeeBrown: { image: '/images/products/boys/tshirt/colors/Royal/t-shirt-Royal-CoffeeBrown.jpg',/*  imageSide: '/images/products/boys/tshirt/colors/Royal/t-shirt-Royal-CoffeeBrown -side.jpg', */ imageBack: '/images/products/boys/tshirt/colors/Royal/t-shirt-Royal-CoffeeBrown-back.jpg' },
     }
    },
   { name: 'Boys Round Neck Full Hand T-Shirt – Vijay', fabric: 'Fancy', label: 'Vijay', menuParent: 'T-Shirt', price: 244, heading: 'Boys Outerwear', excludeVariants: ['Classic Fit', 'Relaxed Fit'], colors: ['Dark Pink', 'Peach', 'Aqua Mint', 'Dark Green', 'Grey', 'Rust Orange'], sizes: ['45', '50', '55', '60', '65', '70', '75', '80', '85'], sizePriceGroups: [['45', '50', '55'], ['60', '65', '70'], ['75'], ['80'], ['85']], sizePrices: [244, 244, 244, 264, 264, 264, 284, 304, 324], discount: 0, image: '/images/products/boys/tshirt/colors/vijay/t-shirt-vijay-Dark Pink.jpg', imageSide: '/images/products/boys/tshirt/colors/vijay/t-shirt-vijay-Dark Pink-side.jpg', imageBack: '/images/products/boys/tshirt/colors/vijay/t-shirt-vijay-Dark Pink-back.jpg' ,
     colorImages: {
-      'Dark Green': { image: '/images/products/boys/tshirt/colors/vijay/t-shirt-vijay-Dark Green.jpg', imageSide: '/images/products/boys/tshirt/colors/vijay/t-shirt-vijay-Dark Green-side.jpg', imageBack: '/images/products/boys/tshirt/colors/vijay/t-shirt-vijay-Dark Green-back.jpg' },
-      Grey: { image: '/images/products/boys/tshirt/colors/vijay/t-shirt-vijay-Grey.jpg', imageSide: '/images/products/boys/tshirt/colors/vijay/t-shirt-vijay-Grey-side.jpg', imageBack: '/images/products/boys/tshirt/colors/vijay/t-shirt-vijay-Grey-back.jpg' },
-      Peach: { image: '/images/products/boys/tshirt/colors/vijay/t-shirt-vijay-Peach.jpg', imageSide: '/images/products/boys/tshirt/colors/vijay/t-shirt-vijay-Peach-side.jpg', imageBack: '/images/products/boys/tshirt/colors/vijay/t-shirt-vijay-Peach-back.jpg' },
-      'Aqua Mint': { image: '/images/products/boys/tshirt/colors/vijay/t-shirt-vijay-Aqua-Mint.jpg', imageSide: '/images/products/boys/tshirt/colors/vijay/t-shirt-vijay-Aqua-Mint-side.jpg', imageBack: '/images/products/boys/tshirt/colors/vijay/t-shirt-vijay-Aqua-Mint-back.jpg' },
-      'Dark Pink': { image: '/images/products/boys/tshirt/colors/vijay/t-shirt-vijay-Dark Pink.jpg', imageSide: '/images/products/boys/tshirt/colors/vijay/t-shirt-vijay-Dark Pink-side.jpg', imageBack: '/images/products/boys/tshirt/colors/vijay/t-shirt-vijay-Dark Pink-back.jpg' },
-      'Rust Orange': { image: '/images/products/boys/tshirt/colors/vijay/t-shirt-vijay-Rust Orange.jpg', imageSide: '/images/products/boys/tshirt/colors/vijay/t-shirt-vijay-Rust Orange-side.jpg', imageBack: '/images/products/boys/tshirt/colors/vijay/t-shirt-vijay-Rust Orange-back.jpg' },
+      'Dark Green': { image: '/images/products/boys/tshirt/colors/vijay/t-shirt-vijay-Dark Green.jpg', /* imageSide: '/images/products/boys/tshirt/colors/vijay/t-shirt-vijay-Dark Green-side.jpg', */ imageBack: '/images/products/boys/tshirt/colors/vijay/t-shirt-vijay-Dark Green-back.jpg' },
+      Grey: { image: '/images/products/boys/tshirt/colors/vijay/t-shirt-vijay-Grey.jpg', /* imageSide: '/images/products/boys/tshirt/colors/vijay/t-shirt-vijay-Grey-side.jpg',  */imageBack: '/images/products/boys/tshirt/colors/vijay/t-shirt-vijay-Grey-back.jpg' },
+      Peach: { image: '/images/products/boys/tshirt/colors/vijay/t-shirt-vijay-Peach.jpg',/*  imageSide: '/images/products/boys/tshirt/colors/vijay/t-shirt-vijay-Peach-side.jpg',  */imageBack: '/images/products/boys/tshirt/colors/vijay/t-shirt-vijay-Peach-back.jpg' },
+      'Aqua Mint': { image: '/images/products/boys/tshirt/colors/vijay/t-shirt-vijay-Aqua-Mint.jpg',/*  imageSide: '/images/products/boys/tshirt/colors/vijay/t-shirt-vijay-Aqua-Mint-side.jpg', */ imageBack: '/images/products/boys/tshirt/colors/vijay/t-shirt-vijay-Aqua-Mint-back.jpg' },
+      'Dark Pink': { image: '/images/products/boys/tshirt/colors/vijay/t-shirt-vijay-Dark Pink.jpg',/*  imageSide: '/images/products/boys/tshirt/colors/vijay/t-shirt-vijay-Dark Pink-side.jpg', */ imageBack: '/images/products/boys/tshirt/colors/vijay/t-shirt-vijay-Dark Pink-back.jpg' },
+      'Rust Orange': { image: '/images/products/boys/tshirt/colors/vijay/t-shirt-vijay-Rust Orange.jpg',/*  imageSide: '/images/products/boys/tshirt/colors/vijay/t-shirt-vijay-Rust Orange-side.jpg', */ imageBack: '/images/products/boys/tshirt/colors/vijay/t-shirt-vijay-Rust Orange-back.jpg' },
     }
    },
   { name: 'Kids Five Sleeve T-Shirt – Jackson', fabric: 'Tencil', label: 'Jackson', menuParent: 'T-Shirt', price: 290, heading: 'Boys Outerwear', excludeVariants: ['Classic Fit', 'Relaxed Fit'], colors: ['PastelLavender', 'Black', 'DustyLavender', 'Navy', 'PowderBlue', 'Khaki'], sizes: ['45', '50', '55', '60', '65', '70', '75', '80', '85'], sizePriceGroups: [['45', '50', '55'], ['60', '65', '70'], ['75'], ['80'], ['85']], sizePrices: [290, 290, 290, 320, 320, 320, 350, 380, 410], discount: 0, image: '/images/products/boys/tshirt/colors/jackson/t-shirt-jackson-PastelLavender.jpg', imageBack: '/images/products/boys/tshirt/colors/jackson/t-shirt-jackson-PastelLavender-back.jpg' ,
@@ -1370,16 +1364,7 @@ const kidsBoysCatalog = [
       'Dark Green': { image: '/images/products/boys/tshirt/colors/Venus/Boys Full Hand T-Shirt - Venus-Dark Green.jpg', imageBack: '/images/products/boys/tshirt/colors/Venus/Boys Full Hand T-Shirt - Venus-Dark Green-back.jpg' },
     },
    },
-  { name: 'Boys T-Shirt – Rio Set (5 Pcs)', fabric: 'Cotton', label: 'Rio Set (5 Pcs)', menuParent: 'T-Shirt', heading: 'Boys Outerwear', excludeVariants: ['Classic Fit', 'Relaxed Fit'], colors: ['Brown', 'Lavender', 'Grey', 'Checked', 'Aqua Mint'], sizes: ['45', '55', '65', '75', '80', '85'], sizePriceGroups: [['45'], ['55'], ['65'], ['75'], ['80'], ['85']], sizePrices: [120, 130, 140, 150, 160, 170], price: 120, discount: 0, image: '/images/products/boys/tshirt/colors/Rio/t-shirt-bt-Rio-Brown.jpg', imageBack: '/images/products/boys/tshirt/colors/Rio/t-shirt-bt-Rio-Brown.jpg' ,
-    colorImages: {
-      Brown: { image: '/images/products/boys/tshirt/colors/Rio/t-shirt-bt-Rio-Brown.jpg', imageBack: '/images/products/boys/tshirt/colors/Rio/t-shirt-bt-Rio-Brown.jpg' },
-      Lavender: { image: '/images/products/boys/tshirt/colors/Rio/t-shirt-bt-Rio-Lavender.jpg', imageBack: '/images/products/boys/tshirt/colors/Rio/t-shirt-bt-Rio-Lavender.jpg' },
-      Grey: { image: '/images/products/boys/tshirt/colors/Rio/t-shirt-bt-Rio-grey.jpg', imageBack: '/images/products/boys/tshirt/colors/Rio/t-shirt-bt-Rio-grey.jpg' },
-      Checked: { image: '/images/products/boys/tshirt/colors/Rio/t-shirt-bt-Rio-Checked.jpg', imageBack: '/images/products/boys/tshirt/colors/Rio/t-shirt-bt-Rio-Checked.jpg' },
-      'Aqua Mint': { image: '/images/products/boys/tshirt/colors/Rio/t-shirt-bt-Rio-aquamint.jpg', imageBack: '/images/products/boys/tshirt/colors/Rio/t-shirt-bt-Rio-aquamint.jpg' },
-      },
-   },
-   { name: 'Boys Print T-Shirt – Jony', fabric: 'Cotton', label: 'Jony', menuParent: 'T-Shirt', price: 295, heading: 'Boys Outerwear', excludeVariants: ['Classic Fit', 'Relaxed Fit'], colors: ['Navy', 'DustyLavender', 'Brown', 'Wine', 'Black'], sizes: ['45', '55', '65', '75', '80'], sizePriceGroups: [['45'], ['55'], ['65'], ['75'], ['80']], sizePrices: [295, 315, 335, 355, 375], discount: 0, image: '/images/products/boys/tshirt/colors/Jony/t-shirt-bt-Jony-Navy.jpg', imageBack: '/images/products/boys/tshirt/colors/Jony/t-shirt-bt-Jony-Navy-back.jpg' ,
+     { name: 'Boys Print T-Shirt – Jony', fabric: 'Cotton', label: 'Jony', menuParent: 'T-Shirt', price: 295, heading: 'Boys Outerwear', excludeVariants: ['Classic Fit', 'Relaxed Fit'], colors: ['Navy', 'DustyLavender', 'Brown', 'Wine', 'Black'], sizes: ['45', '55', '65', '75', '80'], sizePriceGroups: [['45'], ['55'], ['65'], ['75'], ['80']], sizePrices: [295, 315, 335, 355, 375], discount: 0, image: '/images/products/boys/tshirt/colors/Jony/t-shirt-bt-Jony-Navy.jpg', imageBack: '/images/products/boys/tshirt/colors/Jony/t-shirt-bt-Jony-Navy-back.jpg' ,
     colorImages: {
       DustyLavender: { image: '/images/products/boys/tshirt/colors/Jony/t-shirt-bt-Jony-DustyLavender.jpg', imageBack: '/images/products/boys/tshirt/colors/Jony/t-shirt-bt-Jony-DustyLavender-back.jpg' },
       Navy: { image: '/images/products/boys/tshirt/colors/Jony/t-shirt-bt-Jony-Navy.jpg', imageBack: '/images/products/boys/tshirt/colors/Jony/t-shirt-bt-Jony-Navy-back.jpg' },
@@ -1423,9 +1408,6 @@ const kidsBoysCatalog = [
           Cream: { image: '/images/products/boys/tshirt/colors/Raja/Boys Coat Model Full Hand T-Shirt - Raja-Cream.jpg', imageBack: '/images/products/boys/tshirt/colors/Raja/Boys Coat Model Full Hand T-Shirt - Raja-Cream-back.jpg' },
         },
         },
-
-
-
   { name: 'Boys Round Neck T-Shirt – BT-206 RNS', fabric: 'Fancy', label: 'BT-206 RNS', menuParent: 'T-Shirt', price: 310, heading: 'Boys Outerwear', excludeVariants: ['Classic Fit', 'Relaxed Fit'], colors: ['Wine', 'Black', 'Print', 'Cream', 'PowderBlue', 'Steel Blue'], sizes: ['45', '55', '65', '75', '80', '85'], sizePriceGroups: [['45'], ['55'], ['65'], ['75'], ['80'], ['85']], sizePrices: [310, 330, 350, 370, 390, 410], discount: 0, image: '/images/products/boys/tshirt/colors/tshirt-206/t-shirt-bt-206-wine.jpg', imageSide: '/images/products/boys/printed-t-shirt-side.jpg', imageBack: '/images/products/boys/printed-t-shirt-back.jpg',
      colorImages: {
       Print: { image: '/images/products/boys/tshirt/colors/tshirt-206/t-shirt-bt-206-Print.jpg', imageBack: '/images/products/boys/tshirt/colors/tshirt-206/t-shirt-bt-206-Print-back.jpg' },
@@ -1547,33 +1529,7 @@ const kidsBoysCatalog = [
       CoffeeBrown : { image: '/images/products/boys/shorts/colors/Jack/Boys Summer Shorts-Jack-CoffeeBrown.jpg', imageBack: '/images/products/boys/shorts/colors/Jack/Boys Summer Shorts-Jack-CoffeeBrown-back.jpg' },
     },
   },
-  // "KIDS OUTER WEARS (NET RATE)" wholesale sheet — Mass and Don are Kids
-  // Shorts Set (5 Pcs) rows, so they land in Boys Outerwear. Both are
-  // grouped under the existing "Co-Ords & Shorts Set" flyout (same one
-  // used by the Leo Lilly sets below) rather than the plain "Shorts" row,
-  // since these are two-piece sets, not standalone shorts. The sheet's
-  // size run starts at 40 (below the usual 45), so a leading '40' size is
-  // added ahead of the standard bands.
-  { name: 'Boys Shorts Set – Don', fabric: 'Cotton', label: 'Don', menuParent: 'Co-Ords & Shorts Set', heading: 'Boys Outerwear', excludeVariants: ['Classic Fit', 'Relaxed Fit'], colors: ['Red', 'Navy', 'Grey', 'Beige', 'Cornflower Blue', 'Black'], sizes: ['40', '45', '50', '55', '60', '65', '70', '75'], sizePriceGroups: [['40'], ['45', '50', '55'], ['60', '65', '70'], ['75']], sizePrices: [134, 149, 149, 149, 164, 164, 164, 179], price: 134, discount: 0, image: '/images/products/boys/shorts/colors/Don/Boys Shorts Set-Don-red.jpg', imageBack: '/images/products/boys/shorts/colors/Don/Boys Shorts Set-Don-red-back.jpg' ,
-    colorImages: {
-      Red: { image: '/images/products/boys/shorts/colors/Don/Boys Shorts Set-Don-red.jpg', imageBack: '/images/products/boys/shorts/colors/Don/Boys Shorts Set-Don-red-back.jpg' },
-      Navy : { image: '/images/products/boys/shorts/colors/Don/Boys Shorts Set-Don-Navy.jpg', imageBack: '/images/products/boys/shorts/colors/Don/Boys Shorts Set-Don-Navy-back.jpg' },
-      Beige : { image: '/images/products/boys/shorts/colors/Don/Boys Shorts Set-Don-Beige.jpg', imageBack: '/images/products/boys/shorts/colors/Don/Boys Shorts Set-Don-Beige-back.jpg' },
-      Grey : { image: '/images/products/boys/shorts/colors/Don/Boys Shorts Set-Don-Grey.jpg', imageBack: '/images/products/boys/shorts/colors/Don/Boys Shorts Set-Don-Grey-back.jpg' },
-      Black : { image: '/images/products/boys/shorts/colors/Don/Boys Shorts Set-Don-Black.jpg', imageBack: '/images/products/boys/shorts/colors/Don/Boys Shorts Set-Don-Black-back.jpg' },
-      'Cornflower Blue' : { image: '/images/products/boys/shorts/colors/Don/Boys Shorts Set-Don-Cornflower Blue.jpg', imageBack: '/images/products/boys/shorts/colors/Don/Boys Shorts Set-Don-Cornflower Blue-back.jpg' },
-    },  
-   },
- { name: 'Boys Shorts Set – Mass', fabric: 'Cotton', label: 'Mass', menuParent: 'Co-Ords & Shorts Set', heading: 'Boys Outerwear', excludeVariants: ['Classic Fit', 'Relaxed Fit'], colors: ['Wine', 'Dark Green', 'Grey', 'Orange', 'Black'], sizes: ['40', '45', '50', '55', '60', '65', '70', '75', '80', '85'], sizePriceGroups: [['40'], ['45', '50', '55'], ['60', '65', '70'], ['75'], ['80'], ['85']], sizePrices: [130, 145, 145, 145, 160, 160, 160, 175, 190, 205], price: 130, discount: 0, image: '/images/products/boys/shorts/colors/Mass/Boys Shorts Set - Mass-Orange.jpg', imageBack: '/images/products/boys/shorts/colors/Mass/Boys Shorts Set - Mass-Orange-back.jpg' ,
-  colorImages: {
-      Wine: { image: '/images/products/boys/shorts/colors/Mass/Boys Shorts Set - Mass-Wine.jpg', imageBack: '/images/products/boys/shorts/colors/Mass/Boys Shorts Set - Mass-Wine-back.jpg' },
-      'Dark Green' : { image: '/images/products/boys/shorts/colors/Mass/Boys Shorts Set - Mass-Dark Green.jpg', imageBack: '/images/products/boys/shorts/colors/Mass/Boys Shorts Set - Mass-Dark Green-back.jpg' },
-      Grey : { image: '/images/products/boys/shorts/colors/Mass/Boys Shorts Set - Mass-Grey.jpg', imageBack: '/images/products/boys/shorts/colors/Mass/Boys Shorts Set - Mass-Grey-back.jpg' },
-      Black : { image: '/images/products/boys/shorts/colors/Mass/Boys Shorts Set - Mass-Black.jpg', imageBack: '/images/products/boys/shorts/colors/Mass/Boys Shorts Set - Mass-Black-back.jpg' },
-      'Orange' : { image: '/images/products/boys/shorts/colors/Mass/Boys Shorts Set - Mass-Orange.jpg', imageBack: '/images/products/boys/shorts/colors/Mass/Boys Shorts Set - Mass-Orange-back.jpg' },
-    },
-  },
-  // Additional models added from the V.S.S Textiles wholesale price list
+   // Additional models added from the V.S.S Textiles wholesale price list
   // (Outer Wear sheets 2 & 3). Same pattern as the Outerwear items above —
   // sizePrices carry the MRP rate for each size band, no discount applied.
 
@@ -1608,7 +1564,16 @@ const kidsBoysCatalog = [
       Khaki : { image: '/images/products/boys/3-4th/Leader/3-4thset-leader-Khaki.jpg', imageBack: '/images/products/boys/3-4th/Leader/3-4thset-leader-Khaki-back.jpg' },
     },
    },
-  
+   { name: 'Boys Full Pant Set – Hero', fabric: 'Cotton', label: 'Hero', menuParent: 'Full Pant', price: 220, heading: 'Boys Outerwear', excludeVariants: ['Classic Fit', 'Relaxed Fit'], colors: ['Wine', 'Black', 'Brown', 'BlushPink', 'Grey', 'PeacockBlue'], sizes: ['45', '50', '55', '60', '65', '70', '75', '80', '85'], sizePriceGroups: [['45', '50', '55'], ['60', '65', '70'], ['75'], ['80'], ['85']], sizePrices: [220, 220, 220, 240, 240, 240, 260, 280, 300], discount: 0, image: '/images/products/boys/tshirt/colors/hero/t-shirt-bt-hero-wine.jpg', imageSide: '/images/products/boys/printed-t-shirt-side.jpg', imageBack: '/images/products/boys/printed-t-shirt-back.jpg',
+    colorImages: {
+      Brown: { image: '/images/products/boys/tshirt/colors/hero/t-shirt-bt-hero-Brown.jpg', imageBack: '/images/products/boys/tshirt/colors/hero/t-shirt-bt-hero-Brown-back.jpg' },
+      Black: { image: '/images/products/boys/tshirt/colors/hero/t-shirt-bt-hero-Black.jpg', imageBack: '/images/products/boys/tshirt/colors/hero/t-shirt-bt-hero-Black-back.jpg' },
+      BlushPink: { image: '/images/products/boys/tshirt/colors/hero/t-shirt-bt-hero-BlushPink.jpg', imageBack: '/images/products/boys/tshirt/colors/hero/t-shirt-bt-hero-BlushPink-back.jpg' },
+      Grey: { image: '/images/products/boys/tshirt/colors/hero/t-shirt-bt-hero-grey.jpg', imageBack: '/images/products/boys/tshirt/colors/hero/t-shirt-bt-hero-grey-back.jpg' },
+      PeacockBlue: { image: '/images/products/boys/tshirt/colors/hero/t-shirt-bt-hero-PeacockBlue.jpg', imageBack: '/images/products/boys/tshirt/colors/hero/t-shirt-bt-hero-PeacockBlue-back.jpg' },
+      Wine: { image: '/images/products/boys/tshirt/colors/hero/t-shirt-bt-hero-wine.jpg', imageBack: '/images/products/boys/tshirt/colors/hero/t-shirt-bt-hero-wine-back.jpg' },
+      },
+   },
   { name: 'Boys Full Pant Set – Rider', fabric: 'Cotton', label: 'Rider', menuParent: 'Full Pant', price: 350, heading: 'Boys Outerwear', excludeVariants: ['Classic Fit', 'Relaxed Fit'], colors: ['Black', 'Navy', 'Grey', 'Blue', 'Green'], sizes: ['45', '50', '55', '60', '65', '70', '75', '80', '85'], sizePriceGroups: [['45', '50', '55'], ['60', '65', '70'], ['75'], ['80'], ['85']], sizePrices: [350, 350, 350, 380, 380, 380, 410, 440, 470], discount: 0, image: '/images/products/boys/fullpant/fullpant-rider.jpg', imageSide: '/images/products/boys/jeans-side.jpg', imageBack: '/images/products/boys/jeans-back.jpg' },
   //{ name: 'Boys Print Full Pant – Remo', fabric: 'Cotton', label: 'Remo', menuParent: 'Full Pant', price: 278, heading: 'Boys Outerwear', excludeVariants: ['Classic Fit', 'Relaxed Fit'], colors: ['Navy', 'Black', 'Grey', 'Khaki', 'Blue'], sizes: ['45', '50', '55', '60', '65', '70', '75', '80', '85'], sizePriceGroups: [['45', '50', '55'], ['60', '65', '70'], ['75'], ['80'], ['85']], sizePrices: [278, 278, 278, 298, 298, 298, 318, 338, 358], discount: 0, image: '/images/products/boys/jeans.jpg', imageSide: '/images/products/boys/jeans-side.jpg', imageBack: '/images/products/boys/jeans-back.jpg' },
   //{ name: 'Boys Plain Full Pant – Sanjay', fabric: 'Cotton', label: 'Sanjay', menuParent: 'Full Pant', price: 222, heading: 'Boys Outerwear', excludeVariants: ['Classic Fit', 'Relaxed Fit'], colors: ['Black', 'Navy', 'Grey', 'Khaki', 'Blue'], sizes: ['45', '50', '55', '60', '65', '70', '75', '80', '85'], sizePriceGroups: [['45', '50', '55'], ['60', '65', '70'], ['75'], ['80'], ['85']], sizePrices: [222, 222, 222, 242, 242, 242, 262, 282, 302], discount: 0, image: '/images/products/boys/jeans.jpg', imageSide: '/images/products/boys/jeans-side.jpg', imageBack: '/images/products/boys/jeans-back.jpg' },
@@ -1621,6 +1586,41 @@ const kidsBoysCatalog = [
       'Navy Blue' : { image: '/images/products/boys/fullpant/Campus/Track-Pant-Campus-Navy Blue.jpg', imageBack: '/images/products/boys/fullpant/Campus/Track-Pant-Campus-Navy Blue-back.jpg' },
       Brown : { image: '/images/products/boys/fullpant/Campus/Track-Pant-Campus-Brown.jpg', imageBack: '/images/products/boys/fullpant/Campus/Track-Pant-Campus-Brown-back.jpg' },
     },
+   },
+  // "KIDS OUTER WEARS (NET RATE)" wholesale sheet — Mass and Don are Kids
+  // Shorts Set (5 Pcs) rows, so they land in Boys Outerwear. Both are
+  // grouped under the existing "Co-Ords & Shorts Set" flyout (same one
+  // used by the Leo Lilly sets below) rather than the plain "Shorts" row,
+  // since these are two-piece sets, not standalone shorts. The sheet's
+  // size run starts at 40 (below the usual 45), so a leading '40' size is
+  // added ahead of the standard bands.
+  { name: 'Boys Shorts Set – Don', fabric: 'Cotton', label: 'Don', menuParent: 'Co-Ords & Shorts Set', heading: 'Boys Outerwear', excludeVariants: ['Classic Fit', 'Relaxed Fit'], colors: ['Red', 'Navy', 'Grey', 'Beige', 'Cornflower Blue', 'Black'], sizes: ['40', '45', '50', '55', '60', '65', '70', '75'], sizePriceGroups: [['40'], ['45', '50', '55'], ['60', '65', '70'], ['75']], sizePrices: [134, 149, 149, 149, 164, 164, 164, 179], price: 134, discount: 0, image: '/images/products/boys/shorts/colors/Don/Boys Shorts Set-Don-red.jpg', imageBack: '/images/products/boys/shorts/colors/Don/Boys Shorts Set-Don-red-back.jpg' ,
+    colorImages: {
+      Red: { image: '/images/products/boys/shorts/colors/Don/Boys Shorts Set-Don-red.jpg', imageBack: '/images/products/boys/shorts/colors/Don/Boys Shorts Set-Don-red-back.jpg' },
+      Navy : { image: '/images/products/boys/shorts/colors/Don/Boys Shorts Set-Don-Navy.jpg', imageBack: '/images/products/boys/shorts/colors/Don/Boys Shorts Set-Don-Navy-back.jpg' },
+      Beige : { image: '/images/products/boys/shorts/colors/Don/Boys Shorts Set-Don-Beige.jpg', imageBack: '/images/products/boys/shorts/colors/Don/Boys Shorts Set-Don-Beige-back.jpg' },
+      Grey : { image: '/images/products/boys/shorts/colors/Don/Boys Shorts Set-Don-Grey.jpg', imageBack: '/images/products/boys/shorts/colors/Don/Boys Shorts Set-Don-Grey-back.jpg' },
+      Black : { image: '/images/products/boys/shorts/colors/Don/Boys Shorts Set-Don-Black.jpg', imageBack: '/images/products/boys/shorts/colors/Don/Boys Shorts Set-Don-Black-back.jpg' },
+      'Cornflower Blue' : { image: '/images/products/boys/shorts/colors/Don/Boys Shorts Set-Don-Cornflower Blue.jpg', imageBack: '/images/products/boys/shorts/colors/Don/Boys Shorts Set-Don-Cornflower Blue-back.jpg' },
+    },  
+   },
+ { name: 'Boys Shorts Set – Mass', fabric: 'Cotton', label: 'Mass', menuParent: 'Co-Ords & Shorts Set', heading: 'Boys Outerwear', excludeVariants: ['Classic Fit', 'Relaxed Fit'], colors: ['Wine', 'Dark Green', 'Grey', 'Orange', 'Black'], sizes: ['40', '45', '50', '55', '60', '65', '70', '75', '80', '85'], sizePriceGroups: [['40'], ['45', '50', '55'], ['60', '65', '70'], ['75'], ['80'], ['85']], sizePrices: [130, 145, 145, 145, 160, 160, 160, 175, 190, 205], price: 130, discount: 0, image: '/images/products/boys/shorts/colors/Mass/Boys Shorts Set - Mass-Orange.jpg', imageBack: '/images/products/boys/shorts/colors/Mass/Boys Shorts Set - Mass-Orange-back.jpg' ,
+  colorImages: {
+      Wine: { image: '/images/products/boys/shorts/colors/Mass/Boys Shorts Set - Mass-Wine.jpg', imageBack: '/images/products/boys/shorts/colors/Mass/Boys Shorts Set - Mass-Wine-back.jpg' },
+      'Dark Green' : { image: '/images/products/boys/shorts/colors/Mass/Boys Shorts Set - Mass-Dark Green.jpg', imageBack: '/images/products/boys/shorts/colors/Mass/Boys Shorts Set - Mass-Dark Green-back.jpg' },
+      Grey : { image: '/images/products/boys/shorts/colors/Mass/Boys Shorts Set - Mass-Grey.jpg', imageBack: '/images/products/boys/shorts/colors/Mass/Boys Shorts Set - Mass-Grey-back.jpg' },
+      Black : { image: '/images/products/boys/shorts/colors/Mass/Boys Shorts Set - Mass-Black.jpg', imageBack: '/images/products/boys/shorts/colors/Mass/Boys Shorts Set - Mass-Black-back.jpg' },
+      'Orange' : { image: '/images/products/boys/shorts/colors/Mass/Boys Shorts Set - Mass-Orange.jpg', imageBack: '/images/products/boys/shorts/colors/Mass/Boys Shorts Set - Mass-Orange-back.jpg' },
+    },
+  },
+  { name: 'Boys T-Shirt – Rio Set', fabric: 'Cotton', label: 'Rio Set', menuParent: 'Co-Ords & Shorts Set', heading: 'Boys Outerwear', excludeVariants: ['Classic Fit', 'Relaxed Fit'], colors: ['Brown', 'Lavender', 'Grey', 'Checked', 'Aqua Mint'], sizes: ['45', '55', '65', '75', '80', '85'], sizePriceGroups: [['45'], ['55'], ['65'], ['75'], ['80'], ['85']], sizePrices: [120, 130, 140, 150, 160, 170], price: 120, discount: 0, image: '/images/products/boys/tshirt/colors/Rio/t-shirt-bt-Rio-Brown.jpg', imageBack: '/images/products/boys/tshirt/colors/Rio/t-shirt-bt-Rio-Brown.jpg' ,
+    colorImages: {
+      Brown: { image: '/images/products/boys/tshirt/colors/Rio/t-shirt-bt-Rio-Brown.jpg',/*  imageBack: '/images/products/boys/tshirt/colors/Rio/t-shirt-bt-Rio-Brown.jpg'  */},
+      Lavender: { image: '/images/products/boys/tshirt/colors/Rio/t-shirt-bt-Rio-Lavender.jpg',/*  imageBack: '/images/products/boys/tshirt/colors/Rio/t-shirt-bt-Rio-Lavender.jpg' */ },
+      Grey: { image: '/images/products/boys/tshirt/colors/Rio/t-shirt-bt-Rio-grey.jpg', /* imageBack: '/images/products/boys/tshirt/colors/Rio/t-shirt-bt-Rio-grey.jpg' */ },
+      Checked: { image: '/images/products/boys/tshirt/colors/Rio/t-shirt-bt-Rio-Checked.jpg',/*  imageBack: '/images/products/boys/tshirt/colors/Rio/t-shirt-bt-Rio-Checked.jpg' */ },
+      'Aqua Mint': { image: '/images/products/boys/tshirt/colors/Rio/t-shirt-bt-Rio-aquamint.jpg',/*  imageBack: '/images/products/boys/tshirt/colors/Rio/t-shirt-bt-Rio-aquamint.jpg' */ },
+      },
    },
 
   // Co-Ords & Shorts Set — from the "KIDS WEAR SET RNS" wholesale price
@@ -2173,7 +2173,7 @@ export const bestSellerPicks = [
 export const newArrivalPicks = [
   'T-Shirts Rolex',
   'T-Shirt GT-801',
-  'Boys T-Shirt – Hero',
+  'Boys Full Pant Set – Hero',
   'Girls Full Pant Set – Jara',
   'Kids Five Sleeve T-Shirt – Jackson',
   'Divya',

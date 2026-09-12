@@ -1,0 +1,226 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply font-poppins text-ink bg-cream antialiased;
+  }
+  h1, h2, h3 {
+    @apply font-display;
+  }
+  *:focus-visible {
+    @apply outline outline-2 outline-offset-2 outline-brand;
+  }
+}
+
+@layer utilities {
+  .container-app {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  .section-py {
+    @apply py-16 md:py-20;
+  }
+
+  /* Scroll-reveal — used by <Reveal> (src/components/common/Reveal.jsx).
+     Starts slightly lower and transparent, then eases up into place once
+     the element's IntersectionObserver flips `is-visible`. --reveal-delay
+     is set inline per-instance so a row of cards can stagger in one after
+     another instead of all arriving at once. */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 700ms cubic-bezier(0.22, 1, 0.36, 1), transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  /* Respect reduced-motion preferences — content still appears, just
+     without the animated entrance. */
+  @media (prefers-reduced-motion: reduce) {
+    .reveal {
+      transition: none;
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  /* Smooth expand/collapse for accordion-style content (filter groups, mobile
+     menu sections) using the CSS grid-rows trick — animates height without
+     ever needing to measure the DOM. */
+  .collapse-rows {
+    display: grid;
+    transition: grid-template-rows 280ms cubic-bezier(0.4, 0, 0.2, 1), opacity 220ms ease;
+    grid-template-rows: 0fr;
+    opacity: 0;
+  }
+  .collapse-rows.is-open {
+    grid-template-rows: 1fr;
+    opacity: 1;
+  }
+  .collapse-rows > * {
+    overflow: hidden;
+  }
+  .btn-primary {
+    @apply bg-brand hover:bg-brand-dark text-white font-medium rounded-sm transition-all duration-200;
+  }
+  .btn-outline {
+    @apply border border-ink text-ink hover:border-brand hover:text-brand font-medium rounded-sm transition-all duration-200;
+  }
+  .btn-gold {
+    @apply bg-gold hover:bg-gold-dark text-white font-medium rounded-sm transition-all duration-200;
+  }
+  .card-base {
+    @apply rounded-sm border border-thread hover:border-ink/30 transition-all duration-300 bg-white;
+  }
+  .input-base {
+    @apply w-full rounded-sm border border-thread px-3.5 py-2.5 text-sm text-ink bg-white transition-colors duration-150 focus:outline-none focus:ring-1 focus:ring-brand focus:border-brand hover:border-ink/40;
+  }
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .eyebrow {
+    @apply font-mono text-[11px] tracking-[0.2em] uppercase text-ink-soft;
+  }
+
+  /* ===== Spec-sheet index number =====
+     A big outlined serif numeral used to key section headings, like a
+     catalogue-page or spec-sheet reference number rather than a boutique
+     flourish — reinforces "manufacturer" over "storefront". */
+  .index-num {
+    @apply font-display font-semibold text-transparent;
+    -webkit-text-stroke: 1.5px theme('colors.brand.DEFAULT');
+  }
+
+  /* ===== Signature system: the swing-tag =====
+     VSS is a manufacturer before it's a storefront, so the brand language
+     borrows from the actual garment hang-tag: a die-cut top-left corner,
+     a punched string hole, and a running-stitch edge. Used on category
+     cards, badges and pricing so the "made, not just sold" idea shows up
+     structurally, not just in copy. */
+  .swing-tag {
+    position: relative;
+    clip-path: polygon(0 14px, 14px 0, 100% 0, 100% 100%, 0 100%);
+  }
+  .swing-tag::before {
+    content: '';
+    position: absolute;
+    top: 7px;
+    left: 7px;
+    width: 6px;
+    height: 6px;
+    border-radius: 999px;
+    background: currentColor;
+    opacity: 0.35;
+    z-index: 10;
+  }
+
+  /* Running stitch: a seam standing in for the brand's textile roots.
+     Used as a section divider / decorative accent instead of a plain rule. */
+  .stitch-divider {
+    height: 1px;
+    background-image: repeating-linear-gradient(
+      to right,
+      theme('colors.brand.DEFAULT') 0,
+      theme('colors.brand.DEFAULT') 6px,
+      transparent 6px,
+      transparent 13px
+    );
+  }
+  .stitch-divider-vertical {
+    width: 1px;
+    background-image: repeating-linear-gradient(
+      to bottom,
+      theme('colors.brand.DEFAULT') 0,
+      theme('colors.brand.DEFAULT') 6px,
+      transparent 6px,
+      transparent 13px
+    );
+  }
+
+  /* Warp-thread field: a quiet backdrop of vertical hairlines, like yarn
+     strung on a loom before the weft is thrown. Used behind the hero only. */
+  .warp-field {
+    background-image: repeating-linear-gradient(
+      to right,
+      theme('colors.brand.DEFAULT') / 1 0,
+      theme('colors.brand.DEFAULT') / 1 1px,
+      transparent 1px,
+      transparent 34px
+    );
+    background-color: theme('colors.cream.DEFAULT');
+  }
+
+  /* Continuous horizontal ticker for the top announcement bar — the item
+     list is rendered twice back-to-back and slid by exactly -50%, so the
+     loop is seamless no matter how many items are in the list. */
+  .marquee-track {
+    animation: marquee-scroll 26s linear infinite;
+  }
+  .marquee-track:hover,
+  .marquee-track:focus-within {
+    animation-play-state: paused;
+  }
+  @keyframes marquee-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* Hero slider copy panel — a quick fade + rise whenever the slide (and
+     therefore the headline/description) changes, so the text swap reads
+     as smooth rather than a hard cut. */
+  .hero-copy-enter {
+    animation: hero-copy-in 450ms ease both;
+  }
+  /* Dual-thumb price range slider — two native <input type="range"> stacked
+     on the same track (see the Price FilterSection in Shop.jsx). Both
+     inputs keep their track fully transparent so only our own custom track
+     (drawn separately in the markup) shows through, while each thumb is
+     restyled into a plain filled circle and kept clickable via
+     pointer-events even though the input itself sits on top of the other. */
+  .range-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    pointer-events: none;
+  }
+  .range-slider::-webkit-slider-runnable-track {
+    -webkit-appearance: none;
+    background: transparent;
+    height: 2px;
+  }
+  .range-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    pointer-events: auto;
+    width: 16px;
+    height: 16px;
+    border-radius: 9999px;
+    background: theme('colors.brand.DEFAULT');
+    cursor: pointer;
+    margin-top: -7px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  }
+  .range-slider::-moz-range-track {
+    background: transparent;
+    height: 2px;
+    border: none;
+  }
+  .range-slider::-moz-range-thumb {
+    pointer-events: auto;
+    width: 16px;
+    height: 16px;
+    border-radius: 9999px;
+    background: theme('colors.brand.DEFAULT');
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  }
+}

@@ -1737,9 +1737,9 @@ const kidsGirlsCatalog = [
   // its own sizeUnit: 'cm' the same way the innerwear items further down
   // do. GT-504 has no 85-90 wholesale/MRP rate on the sheet (shown as
   // "-"), so it only carries 3 sizes
-  { name: 'Girls T-Shirt GT-501', fabric: 'Fancy', label: 'GT-501', menuParent: 'T-Shirt', heading: 'Girls Outerwear', excludeVariants: ['Classic Fit', 'Relaxed Fit'], colors: ['Wine', 'Red', 'Green', 'Blue', 'Navy', 'Khaki'], sizes: ['45', '50', '55', '60', '65', '70', '75', '80', '85', '90'], sizeUnit: 'cm', sizePriceGroups: [['45', '50', '55'], ['60', '65', '70'], ['75', '80'], ['85', '90']], sizePrices: [136, 136, 136, 148, 148, 148, 160, 160, 172, 172], price: 136, discount: 0, image: '/images/products/girls/tshirt/colours/gt-501/tshirt-501-green.jpg', imageSide: '/images/products/girls/printed-t-shirt-side.jpg', imageBack: '/images/products/girls/printed-t-shirt-back.jpg',
+  { name: 'Girls T-Shirt GT-501', fabric: 'Fancy', label: 'GT-501', menuParent: 'T-Shirt', heading: 'Girls Outerwear', excludeVariants: ['Classic Fit', 'Relaxed Fit'], colors: ['Green', 'Wine', 'Dark Pink', 'Blue', 'Navy', 'Khaki'], sizes: ['45', '50', '55', '60', '65', '70', '75', '80', '85', '90'], sizeUnit: 'cm', sizePriceGroups: [['45', '50', '55'], ['60', '65', '70'], ['75', '80'], ['85', '90']], sizePrices: [136, 136, 136, 148, 148, 148, 160, 160, 172, 172], price: 136, discount: 0, image: '/images/products/girls/tshirt/colours/gt-501/tshirt-501-green.jpg', imageSide: '/images/products/girls/printed-t-shirt-side.jpg', imageBack: '/images/products/girls/printed-t-shirt-back.jpg',
     colorImages: {
-      Red: { image: '/images/products/girls/tshirt/colours/gt-501/tshirt-501-red.jpg', imageBack: '/images/products/girls/tshirt/colours/gt-501/tshirt-501-red-back.jpg' },
+      'Dark Pink': { image: '/images/products/girls/tshirt/colours/gt-501/tshirt-501-Dark pink.jpg', imageBack: '/images/products/girls/tshirt/colours/gt-501/tshirt-501-Dark pink-back.jpg' },
       Green: { image: '/images/products/girls/tshirt/colours/gt-501/tshirt-501-green.jpg',  imageBack: '/images/products/girls/tshirt/colours/gt-501/tshirt-501-green-back.jpg' },
       Navy: { image: '/images/products/girls/tshirt/colours/gt-501/tshirt-501-Navy.jpg', imageBack: '/images/products/girls/tshirt/colours/gt-501/tshirt-501-Navy-back.jpg' },
       Wine: { image: '/images/products/girls/tshirt/colours/gt-501/tshirt-501-Wine.jpg', imageBack: '/images/products/girls/tshirt/colours/gt-501/tshirt-501-Wine-back.jpg' },
@@ -1749,15 +1749,16 @@ const kidsGirlsCatalog = [
   },
   { name: 'Girls Crop Top GT-505', fabric: 'Fancy', label: 'GT-505', menuParent: 'Crop Top', heading: 'Girls Outerwear', excludeVariants: ['Classic Fit', 'Relaxed Fit'], colors: ['White', 'Pink', 'Blue', 'Yellow', 'Purple'], sizes: ['45', '50', '55', '60', '65', '70', '75', '80', '85', '90'], sizeUnit: 'cm', sizePriceGroups: [['45', '50', '55'], ['60', '65', '70'], ['75', '80'], ['85', '90']], sizePrices: [180, 180, 180, 200, 200, 200, 220, 220, 240, 240], price: 180, discount: 0, image: '/images/products/girls/casual-top.jpg', imageSide: '/images/products/girls/casual-top-side.jpg', imageBack: '/images/products/girls/casual-top-back.jpg' },
 
-  { name: 'Girls T-Shirt GT-506', fabric: 'Fancy', label: 'GT-506', menuParent: 'T-Shirt', heading: 'Girls Outerwear', excludeVariants: ['Classic Fit', 'Relaxed Fit'], colors: ['Sky Blue', 'Wine', 'Black', 'Dusty Sage Green', 'Pink'], sizes: ['45', '50', '55', '60', '65', '70', '75', '80', '85', '90'], sizeUnit: 'cm', sizePriceGroups: [['45', '50', '55'], ['60', '65', '70'], ['75', '80'], ['85', '90']], sizePrices: [144, 144, 144, 156, 156, 156, 168, 168, 180, 180], price: 144, discount: 0, image: '/images/products/girls/tshirt/colours/gt-506/tshirt-506-Sky Blue.jpg', imageBack: '/images/products/girls/tshirt/colours/gt-506/tshirt-506-Sky Blue-back.jpg' ,
+  { name: 'Girls T-Shirt GT-506', fabric: 'Fancy', label: 'GT-506', menuParent: 'T-Shirt', heading: 'Girls Outerwear', excludeVariants: ['Classic Fit', 'Relaxed Fit'], colors: ['Sky Blue', 'Wine', 'Black', 'Dusty Sage Green', 'Pink', 'Khaki'], sizes: ['45', '50', '55', '60', '65', '70', '75', '80', '85', '90'], sizeUnit: 'cm', sizePriceGroups: [['45', '50', '55'], ['60', '65', '70'], ['75', '80'], ['85', '90']], sizePrices: [144, 144, 144, 156, 156, 156, 168, 168, 180, 180], price: 144, discount: 0, image: '/images/products/girls/tshirt/colours/gt-506/tshirt-506-Sky Blue.jpg', imageBack: '/images/products/girls/tshirt/colours/gt-506/tshirt-506-Sky Blue-back.jpg' ,
     colorImages: {
       Black: { image: '/images/products/girls/tshirt/colours/gt-506/tshirt-506-Black.jpg', imageBack: '/images/products/girls/tshirt/colours/gt-506/tshirt-506-Black-back.jpg' },
       'Dusty Sage Green': { image: '/images/products/girls/tshirt/colours/gt-506/tshirt-506-Dusty Sage Green.jpg',  imageBack: '/images/products/girls/tshirt/colours/gt-506/tshirt-506-Dusty Sage Green-back.jpg' },
       'Sky Blue': { image: '/images/products/girls/tshirt/colours/gt-506/tshirt-506-Sky Blue.jpg', imageBack: '/images/products/girls/tshirt/colours/gt-506/tshirt-506-Sky Blue-back.jpg' },
       Wine: { image: '/images/products/girls/tshirt/colours/gt-506/tshirt-506-Wine.jpg', imageBack: '/images/products/girls/tshirt/colours/gt-506/tshirt-506-Wine-back.jpg' },
       Pink: { image: '/images/products/girls/tshirt/colours/gt-506/tshirt-506-Pink.jpg', imageBack: '/images/products/girls/tshirt/colours/gt-506/tshirt-506-Pink-back.jpg' },
+      Khaki: { image: '/images/products/girls/tshirt/colours/gt-506/tshirt-506-Khaki.jpg', imageBack: '/images/products/girls/tshirt/colours/gt-506/tshirt-506-Khaki-back.jpg' },
     },
-  },
+   },
   // Same "GIRLS T-SHIRT RNS" sheet, later rows — these three use the
   // plain 45-55/60-70/75/80/85 size run (not the 4 cm bands above), so no
   // sizeUnit here, matching the Hasna/Sana items further up.
@@ -2317,7 +2318,7 @@ export const homepageTopsPicks = [
   'Prince Cut Long Top',
   'Rani Pink Floral Embroidered Georgette Top',
   'Blush Botanical Printed Co-Ord Set',
-  'Royal Purple Floral Embroidered Georgette Top',
+  'Rani Pink Round Neck Floral Georgette Top',
 ]
 
 export const homepageBraPicks = [

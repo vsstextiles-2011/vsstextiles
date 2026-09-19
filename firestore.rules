@@ -1,0 +1,110 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function isAdmin() {
+      return signedIn()
+        && exists(/databases/$(database)/documents/admins/$(request.auth.uid))
+        && get(/databases/$(database)/documents/admins/$(request.auth.uid)).data.role == 'admin'
+        && get(/databases/$(database)/documents/admins/$(request.auth.uid)).data.active == true;
+    }
+
+    // A signed-in account may read only the admin document whose document ID
+    // exactly equals its Firebase Authentication UID.
+    match /admins/{adminId} {
+      allow read: if signedIn() && request.auth.uid == adminId;
+      allow write: if false;
+    }
+
+    // Customers may access only their own profile. A client cannot promote
+    // itself to admin by changing its user role.
+    match /users/{userId} {
+      allow read: if signedIn() && request.auth.uid == userId;
+
+      allow create: if signedIn()
+                    && request.auth.uid == userId
+                    && request.resource.data.role == 'customer';
+
+      allow update: if signedIn()
+                    && request.auth.uid == userId
+                    && request.resource.data.role == resource.data.role;
+
+      allow delete: if false;
+    }
+
+    // Public storefront reads. Product writes are admin-only.
+    match /products/{productId} {
+      allow read: if true;
+      allow create, update, delete: if isAdmin();
+    }
+
+    // Each shopper (anonymous or signed-in) has exactly one cart document,
+    // keyed by their own Firebase Auth uid. Nobody else -- not even an
+    // admin -- can read or write another shopper's cart.
+    match /carts/{uid} {
+      allow read, write: if signedIn() && request.auth.uid == uid;
+    }
+
+    // Each shopper (anonymous or signed-in) has exactly one wishlist
+    // document, keyed by their own Firebase Auth uid. Same access pattern
+    // as carts above.
+    match /wishlists/{uid} {
+      allow read, write: if signedIn() && request.auth.uid == uid;
+    }
+
+    // Orders are created by the shopper who placed them (request.resource
+    // is the incoming document, so this checks the userId being WRITTEN
+    // matches the caller) and can be read by that same shopper or by an
+    // admin. Nobody can list another user's orders -- except an admin,
+    // who is allowed to query the whole collection (see the Orders tab
+    // in Admin.jsx) so they can see and manage every customer's orders.
+    //
+    // IMPORTANT CAVEAT: because there's no payment-verifying backend yet,
+    // a signed-in client can currently create an order with
+    // status:"confirmed" directly -- there's nothing here stopping someone
+    // from placing a "confirmed" order without actually paying. Once a
+    // real payment gateway is wired in (see the 20-day plan), lock this
+    // down further: only allow create with status == "pending", and only
+    // allow the confirmed/paid transition via a Cloud Function using the
+    // Admin SDK (which bypasses these rules entirely).
+    //
+    // Admin updates are restricted to only the order-status fields
+    // (status/statusHistory/statusUpdatedAt/cancelledBy) -- an admin can
+    // move an order through Processing / Shipped / Out for Delivery /
+    // Delivered / Cancelled, but can't rewrite the items, address,
+    // payment, or totals a customer actually placed.
+    //
+    // Cancellation can also be triggered by the shopper who placed the
+    // order (see OrderContext.cancelOrder), not just the admin. Either
+    // way, once status == "cancelled" it's a terminal state: the second
+    // clause below only lets a customer flip a live order to cancelled
+    // (never anything else, and never once it's already cancelled or
+    // delivered), and the first clause stops even an admin from touching
+    // status again after that -- so whoever cancelled it, admin or
+    // customer, nobody can move it to another status afterwards.
+    match /orders/{orderId} {
+      allow create: if signedIn() && request.resource.data.userId == request.auth.uid;
+      allow read: if signedIn() && (resource.data.userId == request.auth.uid || isAdmin());
+      allow update: if signedIn()
+                    && (
+                      (isAdmin()
+                        && resource.data.status != 'cancelled'
+                        && request.resource.data.diff(resource.data).affectedKeys()
+                             .hasOnly(['status', 'statusHistory', 'statusUpdatedAt', 'cancelledBy']))
+                      ||
+                      (resource.data.userId == request.auth.uid
+                        && resource.data.status != 'cancelled'
+                        && resource.data.status != 'delivered'
+                        && request.resource.data.status == 'cancelled'
+                        && request.resource.data.diff(resource.data).affectedKeys()
+                             .hasOnly(['status', 'statusHistory', 'statusUpdatedAt', 'cancelledBy']))
+                    );
+      allow delete: if false;
+    }
+  }
+}

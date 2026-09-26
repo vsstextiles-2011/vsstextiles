@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/jpeg" href="/vss-logo.jpg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="VSS Textiles - Fashion for Men, Women & Kids. Shop the latest garment collections at the best prices." />
+    <title>VSS Textiles | Fashion for the Whole Family</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+    <!-- Preload every homepage hero slide photo as early as possible (before
+         the JS bundle even parses), so by the time the slider becomes
+         interactive every image is already downloaded/decoded. This is what
+         stops the blank white gap that used to show while dragging/paging
+         through slides whose photo hadn't finished loading yet. Keep this
+         list in sync with src/data/heroSlides.js. -->
+    <link rel="preload" as="image" href="/images/hero/shop-by-categorie.jpg" fetchpriority="high" />
+    <link rel="preload" as="image" href="/images/hero/everyday-essentials.jpg" />
+    <link rel="preload" as="image" href="/images/hero/brassier.jpg" />
+    <link rel="preload" as="image" href="/images/hero/tshirt-collection.jpg" />
+    <link rel="preload" as="image" href="/images/hero/slip-collection.jpg" />
+    <link rel="preload" as="image" href="/images/hero/panties-collection.jpg" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

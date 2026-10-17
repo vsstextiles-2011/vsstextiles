@@ -1,0 +1,129 @@
+VSS TEXTILES - FIREBASE ADMIN AUTH SETUP
+========================================
+
+The website now uses this admin check:
+
+  Firebase Authentication login
+            +
+  Firestore document: admins/{Firebase Authentication UID}
+
+Both must pass.
+
+1) FIREBASE AUTHENTICATION
+--------------------------
+Firebase Console -> Authentication -> Users
+
+Create/keep the admin user:
+
+Email:
+  vsstextiles2011@gmail.com
+
+Password:
+  Set the password only in Firebase Authentication.
+  DO NOT store the password in Firestore.
+
+After creating the user, COPY the exact User UID shown in Authentication.
+Example only:
+  AbCdEf123456...
+
+Do not use the example. Use your real UID.
+
+2) FIRESTORE ADMIN DOCUMENT
+---------------------------
+Firebase Console -> Firestore Database -> Data
+
+Collection ID:
+  admins
+
+Document ID:
+  EXACT Firebase Authentication User UID
+
+IMPORTANT:
+The document ID must be exactly the same UID copied from Authentication.
+Do not use email as the document ID.
+Do not let Firestore auto-generate the document ID.
+
+Fields to create:
+
+  active   Boolean   true
+  email    String    vsstextiles2011@gmail.com
+  role     String    admin
+
+Example structure:
+
+admins
+  └── YOUR_EXACT_AUTH_UID
+       ├── active: true
+       ├── email: "vsstextiles2011@gmail.com"
+       └── role: "admin"
+
+3) FIRESTORE RULES - REQUIRED
+-----------------------------
+Open:
+  Firebase Console -> Firestore Database -> Rules
+
+Publish the firestore.rules file included in this project.
+
+The important admin section is:
+
+  match /admins/{adminId} {
+    allow read: if request.auth != null
+                && request.auth.uid == adminId;
+    allow write: if false;
+  }
+
+Do not use:
+  allow read, write: if true;
+
+If you already have additional rules for orders or other collections, merge the
+admin block into your existing rules rather than deleting required rules.
+
+4) FIREBASE WEB CONFIG
+----------------------
+Create a .env file in the project root from .env.example.
+
+The values must belong to the SAME Firebase project where you created the
+Authentication user and admins collection.
+
+Required Vite variables:
+  VITE_FIREBASE_API_KEY=
+  VITE_FIREBASE_AUTH_DOMAIN=
+  VITE_FIREBASE_PROJECT_ID=
+  VITE_FIREBASE_STORAGE_BUCKET=
+  VITE_FIREBASE_MESSAGING_SENDER_ID=
+  VITE_FIREBASE_APP_ID=
+
+Get them from:
+  Firebase Console -> Project Settings -> General -> Your apps -> Web app
+
+5) RUN THE WEBSITE
+------------------
+From the extracted project folder:
+
+  npm install
+  npm run dev
+
+Admin login URL:
+  http://localhost:5174/admin/login
+
+Alternate route also supported:
+  http://localhost:5174/admin-login
+
+6) IF ADMIN LOGIN STILL FAILS
+-----------------------------
+The website now displays the Firebase UID in the admin error message when useful.
+Compare that UID with the Firestore admins document ID.
+
+If the message says Firestore denied access:
+  Firestore rules have not been published, or the wrong Firebase project is used.
+
+If the message says account is not active admin:
+  Check document ID = Authentication UID exactly
+  role must be String: admin
+  active must be Boolean: true (not String "true")
+  email must match the Authentication email
+
+SECURITY
+--------
+Admin passwords belong only in Firebase Authentication.
+Never put an admin password in React source code, Firestore, .env, or GitHub.

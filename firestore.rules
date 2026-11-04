@@ -1,0 +1,307 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    // A real account (email/password), as opposed to the anonymous guest
+    // session every visitor gets so their cart can live in Firestore.
+    function isCustomer() {
+      return signedIn() && request.auth.token.firebase.sign_in_provider != 'anonymous';
+    }
+
+    function isAdmin() {
+      return signedIn()
+        && exists(/databases/$(database)/documents/admins/$(request.auth.uid))
+        && get(/databases/$(database)/documents/admins/$(request.auth.uid)).data.role == 'admin'
+        && get(/databases/$(database)/documents/admins/$(request.auth.uid)).data.active == true;
+    }
+
+    // Catalogue staff: an admin lists each person as catalogueStaff/<email in
+    // lower case> = { name, email, phone }. That person is staff when signed in
+    // with that email AND the phone saved in their own profile (users/<uid>) is
+    // the same number.
+    function isCatalogueStaff() {
+      return signedIn()
+        && ('email' in request.auth.token)
+        && exists(/databases/$(database)/documents/catalogueStaff/$(request.auth.token.email.lower()))
+        && (get(/databases/$(database)/documents/catalogueStaff/$(request.auth.token.email.lower())).data.phone == ''
+            || (exists(/databases/$(database)/documents/users/$(request.auth.uid))
+                && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.get('phone', '')
+                   == get(/databases/$(database)/documents/catalogueStaff/$(request.auth.token.email.lower())).data.phone));
+    }
+
+    match /catalogueStaff/{emailKey} {
+      allow read: if isAdmin() || (signedIn() && ('email' in request.auth.token) && request.auth.token.email.lower() == emailKey);
+      allow create, delete: if isAdmin();
+      allow update: if isAdmin()
+                    || (signedIn() && ('email' in request.auth.token) && request.auth.token.email.lower() == emailKey
+                        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['uid', 'linkedAt'])
+                        && request.resource.data.uid == request.auth.uid);
+    }
+
+    // A signed-in account may read only the admin document whose document ID
+    // exactly equals its Firebase Authentication UID.
+    match /admins/{adminId} {
+      allow read: if signedIn() && request.auth.uid == adminId;
+      allow write: if false;
+    }
+
+    // Customers may access only their own profile. A client cannot promote
+    // itself to admin by changing its user role.
+    match /users/{userId} {
+      allow read: if signedIn() && request.auth.uid == userId;
+
+      allow create: if signedIn()
+                    && request.auth.uid == userId
+                    && request.resource.data.role == 'customer';
+
+      allow update: if signedIn()
+                    && request.auth.uid == userId
+                    && request.resource.data.role == resource.data.role
+                    // isStaff (catalogue staff) can only be switched to what the
+                    // staff list says (see isCatalogueStaff).
+                    && (request.resource.data.get('isStaff', false) == resource.data.get('isStaff', false)
+                        || request.resource.data.get('isStaff', false) == isCatalogueStaff());
+
+      allow delete: if false;
+    }
+
+    // Public storefront reads. Product writes are admin-only.
+    //
+    // The ONE exception: when a customer places an order, the order and the
+    // stock it uses are saved in a single transaction (OrderContext.placeOrder).
+    // That lets a signed-in customer lower a product's stock counts - and only
+    // that: no other field may change, the total can never go up or below 0,
+    // inStock can only flip to false, and the write must name (lastOrderId) a
+    // brand-new order of their own that is created in the same transaction.
+    match /products/{productId} {
+      allow read: if true;
+      allow create, delete: if isAdmin();
+      allow update: if (
+                      isCustomer()
+                      && request.resource.data.diff(resource.data).affectedKeys()
+                           .hasOnly(['variantStock', 'sizeStock', 'stockQty', 'inStock', 'lastOrderId'])
+                      && request.resource.data.lastOrderId is string
+                      && !exists(/databases/$(database)/documents/orders/$(request.resource.data.lastOrderId))
+                      && getAfter(/databases/$(database)/documents/orders/$(request.resource.data.lastOrderId)).data.userId == request.auth.uid
+                      && request.resource.data.stockQty is number
+                      && request.resource.data.stockQty >= 0
+                      && request.resource.data.stockQty <= resource.data.stockQty
+                      && (request.resource.data.inStock == resource.data.inStock || request.resource.data.inStock == false)
+                    )
+                    || isAdmin();
+    }
+
+    // Editable homepage content (hero slider slides, ...). Anyone can read
+    // it so the storefront can render it; only a signed-in admin can change
+    // it, from Admin -> Hero Slider.
+    // EXCEPTION: siteContent/catalogue (the product catalogue PDFs list) and
+    // siteContent/staffPromoCodes (staff-only discount codes) can be read only by
+    // admins and by company staff (see isCatalogueStaff).
+    match /siteContent/{docId} {
+      allow read: if (docId != 'catalogue' && docId != 'staffPromoCodes') || isAdmin() || isCatalogueStaff();
+      allow create, update, delete: if isAdmin();
+    }
+
+    // Contact-page messages. Any visitor (signed in or not) may SEND one, but
+    // only with the exact fields below, sane lengths and status "new".
+    // Only a signed-in admin can read, mark read/unread, or delete them
+    // (Admin -> Messages). Visitors can never read anyone's messages.
+    match /contactMessages/{messageId} {
+      allow create: if request.resource.data.keys().hasOnly(['name', 'email', 'subject', 'message', 'status', 'readAt', 'createdAt', 'userId'])
+                    && request.resource.data.name is string && request.resource.data.name.size() > 0 && request.resource.data.name.size() <= 100
+                    && request.resource.data.email is string && request.resource.data.email.size() >= 3 && request.resource.data.email.size() <= 200
+                    && request.resource.data.subject is string && request.resource.data.subject.size() > 0 && request.resource.data.subject.size() <= 200
+                    && request.resource.data.message is string && request.resource.data.message.size() > 0 && request.resource.data.message.size() <= 3000
+                    && request.resource.data.status == 'new'
+                    && request.resource.data.createdAt == request.time;
+      allow read, delete: if isAdmin();
+      allow update: if isAdmin()
+                    && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['status', 'readAt'])
+                    && request.resource.data.status in ['new', 'read'];
+    }
+
+    // Admin activity log (Admin -> Activity Log). An admin can ADD an entry
+    // (it must carry their own uid and the server time) and read the log.
+    // Entries can never be edited or deleted, so it stays trustworthy.
+    match /activityLog/{entryId} {
+      allow read: if isAdmin();
+      allow create: if isAdmin()
+                    && request.resource.data.actorUid == request.auth.uid
+                    && request.resource.data.createdAt == request.time
+                    && request.resource.data.summary is string
+                    && request.resource.data.summary.size() <= 400;
+      allow update, delete: if false;
+    }
+
+    // Optional admin click & key log (Admin -> Firestore Usage). An admin may
+    // add entries stamped with their own uid and the server time; typed
+    // characters are never stored. Entries can't be edited or deleted.
+    match /interactionLog/{entryId} {
+      allow read: if isAdmin();
+      allow create: if isAdmin()
+                    && request.resource.data.actorUid == request.auth.uid
+                    && request.resource.data.createdAt == request.time
+                    && request.resource.data.type in ['click', 'key']
+                    && request.resource.data.summary is string
+                    && request.resource.data.summary.size() <= 300;
+      allow update, delete: if false;
+    }
+
+    // Product page view counters (Admin -> Sales -> Most viewed). Anyone may
+    // add exactly +1 to a product's counter for today; nothing else can be
+    // written, and only an admin can read the numbers.
+    match /productViews/{viewId} {
+      allow read: if isAdmin();
+      allow create: if request.resource.data.keys().hasOnly(['productId', 'name', 'day', 'views'])
+                    && request.resource.data.productId is string && request.resource.data.productId.size() <= 120
+                    && request.resource.data.name is string && request.resource.data.name.size() <= 150
+                    && request.resource.data.day is string && request.resource.data.day.size() == 10
+                    && viewId == request.resource.data.day + '_' + request.resource.data.productId
+                    && request.resource.data.views == 1;
+      allow update: if request.resource.data.diff(resource.data).affectedKeys().hasOnly(['views', 'name'])
+                    && request.resource.data.views == resource.data.views + 1;
+      allow delete: if false;
+    }
+
+    // Customer product reviews, moderated by the admin. Doc id is
+    // `{productId}_{uid}`, so each shopper has at most one review per product.
+    //  - Anyone can read APPROVED reviews; the author can always read their
+    //    own (any status); admins can read all.
+    //  - Only a real account (not an anonymous guest) can write, and every
+    //    new or edited review is saved as status "pending".
+    //  - Admins can approve / reject (change only status + moderatedAt) or delete.
+    match /reviews/{reviewId} {
+      allow read: if resource.data.status == 'approved'
+                  || isAdmin()
+                  || (signedIn() && reviewId.matches('.*_' + request.auth.uid));
+      allow create: if isCustomer()
+                    && reviewId == request.resource.data.productId + '_' + request.auth.uid
+                    && request.resource.data.keys().hasOnly(['productId', 'productName', 'userId', 'userName', 'rating', 'comment', 'status', 'createdAt', 'updatedAt'])
+                    && request.resource.data.status == 'pending'
+                    && request.resource.data.userId == request.auth.uid
+                    && request.resource.data.productId is string && request.resource.data.productId.size() <= 120
+                    && request.resource.data.productName is string && request.resource.data.productName.size() <= 150
+                    && request.resource.data.userName is string && request.resource.data.userName.size() > 0 && request.resource.data.userName.size() <= 60
+                    && request.resource.data.rating is number && request.resource.data.rating >= 1 && request.resource.data.rating <= 5 && math.floor(request.resource.data.rating * 2) == request.resource.data.rating * 2
+                    && request.resource.data.comment is string && request.resource.data.comment.size() >= 3 && request.resource.data.comment.size() <= 1000
+                    && request.resource.data.createdAt == request.time
+                    && request.resource.data.updatedAt == request.time;
+      allow update: if (
+                      isCustomer()
+                      && resource.data.userId == request.auth.uid
+                      && request.resource.data.keys().hasOnly(['productId', 'productName', 'userId', 'userName', 'rating', 'comment', 'status', 'createdAt', 'updatedAt'])
+                      && request.resource.data.status == 'pending'
+                      && request.resource.data.productId == resource.data.productId
+                      && request.resource.data.userId == resource.data.userId
+                      && request.resource.data.createdAt == resource.data.createdAt
+                      && request.resource.data.rating is number && request.resource.data.rating >= 1 && request.resource.data.rating <= 5 && math.floor(request.resource.data.rating * 2) == request.resource.data.rating * 2
+                      && request.resource.data.comment is string && request.resource.data.comment.size() >= 3 && request.resource.data.comment.size() <= 1000
+                      && request.resource.data.userName is string && request.resource.data.userName.size() > 0 && request.resource.data.userName.size() <= 60
+                      && request.resource.data.updatedAt == request.time
+                    )
+                    || (
+                      isAdmin()
+                      && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['status', 'moderatedAt'])
+                      && request.resource.data.status in ['pending', 'approved', 'rejected', 'removed']
+                    );
+      allow delete: if isAdmin() || (isCustomer() && resource.data.userId == request.auth.uid);
+    }
+
+    // Each shopper (anonymous or signed-in) has exactly one cart document,
+    // keyed by their own Firebase Auth uid. Nobody else -- not even an
+    // admin -- can read or write another shopper's cart.
+    match /carts/{uid} {
+      allow read, write: if signedIn() && request.auth.uid == uid;
+    }
+
+    // Each shopper (anonymous or signed-in) has exactly one wishlist
+    // document, keyed by their own Firebase Auth uid. Same access pattern
+    // as carts above.
+    match /wishlists/{uid} {
+      allow read, write: if signedIn() && request.auth.uid == uid;
+    }
+
+    // Orders require a real account -- guest (anonymous) sessions are refused.
+    // Orders are created by the shopper who placed them (request.resource
+    // is the incoming document, so this checks the userId being WRITTEN
+    // matches the caller) and can be read by that same shopper or by an
+    // admin. Nobody can list another user's orders -- except an admin,
+    // who is allowed to query the whole collection (see the Orders tab
+    // in Admin.jsx) so they can see and manage every customer's orders.
+    //
+    // IMPORTANT CAVEAT: because there's no payment-verifying backend yet,
+    // a signed-in client can currently create an order with
+    // status:"confirmed" directly -- there's nothing here stopping someone
+    // from placing a "confirmed" order without actually paying. Once a
+    // real payment gateway is wired in (see the 20-day plan), lock this
+    // down further: only allow create with status == "pending", and only
+    // allow the confirmed/paid transition via a Cloud Function using the
+    // Admin SDK (which bypasses these rules entirely).
+    //
+    // Admin updates are restricted to only the order-status fields
+    // (status/statusHistory/statusUpdatedAt/cancelledBy) -- an admin can
+    // move an order through Processing / Packed / Shipped / Out for
+    // Delivery / Delivered / Cancelled (and, after delivery, Return
+    // Requested / Returned / Refunded), but can't rewrite the items, address,
+    // payment, or totals a customer actually placed.
+    //
+    // Cancellation can also be triggered by the shopper who placed the
+    // order (see OrderContext.cancelOrder), not just the admin. Either
+    // way, once status == "cancelled" it's a terminal state: the second
+    // clause below only lets a customer flip a live order to cancelled
+    // (never anything else, and never once it's already cancelled or
+    // delivered), and the first clause stops even an admin from touching
+    // status again after that -- so whoever cancelled it, admin or
+    // customer, nobody can move it to another status afterwards.
+    match /orders/{orderId} {
+      allow create: if isCustomer() && request.resource.data.userId == request.auth.uid;
+      allow read: if signedIn() && (resource.data.userId == request.auth.uid || isAdmin());
+      allow update: if signedIn()
+                    && (
+                      (isAdmin()
+                        && resource.data.status != 'cancelled'
+                        && resource.data.status != 'refunded'
+                        && request.resource.data.diff(resource.data).affectedKeys()
+                             .hasOnly(['status', 'statusHistory', 'statusUpdatedAt', 'cancelledBy', 'courier', 'courierTrackingNumber', 'courierUpdatedAt', 'stockDeducted', 'stockMoved',
+                                       'returnRejectReason', 'pickupDate', 'pickupCourier', 'refundAmount', 'refundMethod', 'refundRef']))
+                      ||
+                      // Putting a cancelled / returned order's units back in stock
+                      // (OrderContext.restoreOrderStock) touches only this flag, and
+                      // is allowed in any status - it never changes the order itself.
+                      (isAdmin()
+                        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['stockRestored'])
+                        && request.resource.data.stockRestored == true)
+                      ||
+                      (resource.data.userId == request.auth.uid
+                        && resource.data.status != 'cancelled'
+                        && resource.data.status != 'delivered'
+                        && !(resource.data.status in ['return-requested', 'return-approved', 'pickup-scheduled', 'return-picked-up', 'returned', 'quality-check', 'refunded', 'return-rejected'])
+                        && request.resource.data.status == 'cancelled'
+                        && request.resource.data.diff(resource.data).affectedKeys()
+                             .hasOnly(['status', 'statusHistory', 'statusUpdatedAt', 'cancelledBy']))
+                      ||
+                      // Customer return request: only on their own DELIVERED order,
+                      // and it can only move it to 'return-requested'.
+                      (resource.data.userId == request.auth.uid
+                        && resource.data.status == 'delivered'
+                        && request.resource.data.status == 'return-requested'
+                        && request.resource.data.diff(resource.data).affectedKeys()
+                             .hasOnly(['status', 'statusHistory', 'statusUpdatedAt', 'returnReason', 'returnComment', 'returnRequestedAt', 'returnItems'])
+                        && request.resource.data.returnItems is list
+                        && request.resource.data.returnItems.size() > 0
+                        && request.resource.data.returnItems.size() <= 50
+                        && request.resource.data.returnReason is string
+                        && request.resource.data.returnReason.size() > 0
+                        && request.resource.data.returnReason.size() <= 120
+                        && request.resource.data.returnComment is string
+                        && request.resource.data.returnComment.size() <= 500)
+                    );
+      allow delete: if false;
+    }
+  }
+}
